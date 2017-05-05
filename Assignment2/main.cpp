@@ -20,5 +20,6 @@ int main() {
 		ss << str;
 
 	}
+	f.close();
 	return 0;
 }
