@@ -2,24 +2,11 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <iomanip>
 using namespace std;
 int main() {
-	string str, username, pass;
-	cout << "----------------------------------------------------------------" << endl
-		<< "----------------------------LOG IN------------------------------" << endl
-		<< "----------------------------------------------------------------" << endl << endl << endl;
-	cout << "USER NAME: ";
-	cin >> username;
-	cout << "PASSWORD: ";
-	cin >> pass;
-	fstream f;
-	f.open("account.txt");
-	while (!f.eof()) {
-		stringstream ss;
-		getline(f, str);
-		ss << str;
 
-	}
-	f.close();
+	cin.get();
+	cin.get();
 	return 0;
 }
