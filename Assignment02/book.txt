@@ -1,4 +1,0 @@
-0;nguyen van a;nguyen vo chi cong
-1;nguyen huynh nhat anh;nguyen cuong cao nguyen
-2;le thi dan ;dinh bo linh
-3;guyen van a;huynh nhat vy
