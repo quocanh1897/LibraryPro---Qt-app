@@ -110,7 +110,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="login.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />

@@ -1,4 +1,6 @@
-quocanh.a  aaa
-quocanh11  bbb
-qaz  aba
-zzz  bab
+anh.a aaa 0 1 1
+qanh11 bbb 1 1 1
+qaz aba 0 0 1
+zzz bab 0 1 0
+cuz.22 aaa 0 0 1
+tyen2 777 0 1 1
