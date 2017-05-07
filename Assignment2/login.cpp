@@ -3,16 +3,14 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include"Account.h"
 using namespace std;
-void login() {
-	string str, username, pass;
-	bool admin, reader, librarian;
-	cout << "----------------------------------------------------------------" << endl
-		<< "----------------------------LOG IN------------------------------" << endl
-		<< "----------------------------------------------------------------" << endl << endl << endl;
+void login(string &acc, string &pass, bool &reader, bool &librarian, bool &admin) {
+	string str;
+	
 LOGIN:
-	cout << "USER NAME: ";
-	cin >> username;
+	cout << "ACCOUNT NAME: ";
+	cin >> acc;
 	cout << "PASSWORD:  ";
 	cin >> pass;
 	fstream f;
@@ -22,11 +20,11 @@ LOGIN:
 		getline(f, str);
 		ss << str;
 		string u, p;
-		ss >> u >> p >> admin >> reader >> librarian;
-		if (u == username&&p == pass) goto SUCCESS;
+		ss >> u >> p >> reader >> librarian >> admin;
+		if (u == acc&&p == pass) goto SUCCESS;
 		ss.clear();
 	}
-	cout << "Wrong username or password," << endl;
+	cout << "Wrong accountname or password," << endl;
 	goto LOGIN;
 SUCCESS:
 	cout << "Log in successfully" << endl << endl << endl;
@@ -40,6 +38,21 @@ SUCCESS:
 	if (librarian == 1) cout << "Librarian ";
 	getchar(); getchar();*/
 }
+Account::Account(){
+	reader; librarian; admin;
+	AccountName;
+	AccountPassword;
+	UserID;
+}
 int main() {
-	login();
+	 
+	//bool  reader, librarian, admin;
+	string acc, pass;
+	cout << "----------------------------------------------------------------" << endl
+		 << "----------------------------LOG IN------------------------------" << endl
+		 << "----------------------------------------------------------------" << endl << endl << endl;
+	login(AccountName, pass, reader, librarian, admin);
+	
+	cout << acc << pass << reader << librarian << admin;
+	getchar(); getchar();
 }

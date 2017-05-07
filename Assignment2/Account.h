@@ -1,5 +1,5 @@
-#ifndef _ACCOUNT
-#define _ACCOUNT
+#ifndef _ACCOUNT_
+#define _ACCOUNT_
 #include <string>
 using namespace std;
 class Account {
