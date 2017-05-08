@@ -9,12 +9,16 @@ private:
 	string AccountPassword;
 	string UserID;
 public:
-	void setAccountName(string ano);
-	void setAccountPassword(string pas);
-	void setActive(bool admin);
+	//Account();
+	void setAccountName(string acc);
+	void setAccountPassword(string pass);
+	void setActive();
+	void setAccount(string acc, string pass, bool reader, bool librarian, bool admin);
 	string getAccountName();
 	string getAccountPassword();
 	//bool getActive();//
+	void getProfile();
+	void changeAccountPassword();
 };
 
 #endif

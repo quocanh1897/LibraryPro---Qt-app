@@ -5,6 +5,13 @@
 #include <string>
 #include"Account.h"
 using namespace std;
+void Account::setAccount(string acc, string pass, bool read, bool lib, bool adm) {
+	AccountName = acc;
+	AccountPassword = pass;
+	reader = read;
+	librarian = lib;
+	admin = adm;
+}
 void login(string &acc, string &pass, bool &reader, bool &librarian, bool &admin) {
 	string str;
 	
@@ -38,21 +45,17 @@ SUCCESS:
 	if (librarian == 1) cout << "Librarian ";
 	getchar(); getchar();*/
 }
-Account::Account(){
-	reader; librarian; admin;
-	AccountName;
-	AccountPassword;
-	UserID;
-}
+
+
 int main() {
-	 
-	//bool  reader, librarian, admin;
+	Account log;
+	bool  read, lib, adm;
 	string acc, pass;
 	cout << "----------------------------------------------------------------" << endl
 		 << "----------------------------LOG IN------------------------------" << endl
 		 << "----------------------------------------------------------------" << endl << endl << endl;
-	login(AccountName, pass, reader, librarian, admin);
+	login(acc, pass, read, lib, adm);
+	log.setAccount(acc, pass, read, lib, adm);
 	
-	cout << acc << pass << reader << librarian << admin;
-	getchar(); getchar();
+	cin.get();
 }
