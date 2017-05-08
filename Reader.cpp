@@ -1,4 +1,5 @@
 #include<iostream>
+#include<fstream>
 #include<string>
 #include<iomanip>
 #include"Account.h"
@@ -70,4 +71,28 @@ void Account::changeAccountPassword()
 
 
 	}
+}
+
+void Account::getNotice()
+{
+	ifstream notice;
+	string line;
+	int count = 0;
+	notice.open("Notice.txt");
+	cout << "Cac thong bao hien co :\n";
+	while (notice.eof() == false)
+	{
+		getline(notice,line);
+		if (line.length() > 0)
+		{
+			count++;
+			cout << line << endl;
+		}
+		else
+			continue;
+	}
+	if (count == 0)
+		cout << "Khong co thong bao moi.\n";
+	notice.close();
+	system("pause");
 }
