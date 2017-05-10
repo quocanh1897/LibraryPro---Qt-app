@@ -18,6 +18,8 @@ public:
 	//bool getActive();//
 	void getProfile();
 	void changeAccountPassword();
+	void getNotice();
+	int LevashteinDistance(string str1, string str2);
 };
 
 #endif

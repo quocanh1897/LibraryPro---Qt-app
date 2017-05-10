@@ -2,6 +2,7 @@
 #include<fstream>
 #include<string>
 #include<iomanip>
+#include<vector>
 #include"Account.h"
 
 using namespace std;
@@ -93,6 +94,33 @@ void Account::getNotice()
 	}
 	if (count == 0)
 		cout << "Khong co thong bao moi.\n";
+	else
+		cout << "Co " << count << " thong bao hien tai.\n";
 	notice.close();
 	system("pause");
+}
+
+int Account::LevashteinDistance(string str1, string str2)
+{
+	int len_str1 = str1.length();
+	int len_str2 = str2.length();
+	vector <vector<int>> cost_table(len_str1 + 1, vector<int>(len_str2 + 1, 0));
+	int cost = 0;
+	int value = 0;
+	for (int i = 0; i <= len_str1; i++)
+		cost_table[i][0] = i;
+	for (int i = 0; i <= len_str2; i++)
+		cost_table[0][i] = i;
+	for (int i = 1; i <= len_str1; i++)
+		for (int j = 1; j <= len_str2; j++)
+		{
+			if (str1[i-1] == str2[j-1])
+				cost = 0;
+			else
+				cost = 1;
+			value = cost_table[i-1][j] + 1 < cost_table[i][j - 1] + 1 ? cost_table[i - 1][j] + 1 : cost_table[i][j - 1] + 1; 
+			value = cost_table[i - 1][j - 1] + cost < value ? cost_table[i - 1][j - 1] + cost : value;
+			cost_table[i][j] = value;
+		}
+	return cost_table[len_str1][len_str2];
 }
