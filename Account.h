@@ -10,6 +10,8 @@ private:
 	string UserID;
 public:
 	Account();
+	Account(string name, string pass, string id, bool r, bool l, bool a);
+	Account createAccount();
 	void setAccountName(string ano);
 	void setAccountPassword(string pas);
 	void setActive();

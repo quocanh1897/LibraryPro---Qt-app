@@ -15,6 +15,48 @@ Account::Account()
 	UserID = "anh.quan.admin";
 }
 
+Account::Account(string name, string pass, string id, bool r, bool l, bool a)
+{
+	AccountName = name;
+	AccountPassword = pass;
+	UserID = id;
+	admin = a;
+	librarian = l;
+	reader = r;
+}
+
+Account Account::createAccount()
+{
+	if (admin != true)
+	{
+		cout << "Ban khong du tham quyen de thuc hien lenh nay!";
+		system("pause");
+		system("cls");
+	}
+	else
+	{
+		string name, pass, id;
+		bool r, l, a;
+		cout << "Xin nhap ten cua tai khoan moi : ";
+		getline(cin, name);
+		cout << "Xin nhap mat khau cua tai khoan moi : ";
+		getline(cin, pass);
+		cout << "Xin nhap User ID cua tai khoan moi : ";
+		getline(cin, id);
+		cout << "Admin (0/1) : ";
+		cin >> a;
+		cout << "Librarian (0/1) : ";
+		cin >> l;
+		cout << "Reader (0/1) : ";
+		cin >> r;
+		Account new_acc = Account(name, pass, id, r, l, a);
+		cout << "Tao tai khoan thanh cong.";
+		system("pause");
+		system("cls");
+		return new_acc;
+	}
+}
+
 void Account::getProfile()
 {
 	cout << left << setw(20) << "Ten" << ": " << AccountName << endl;
