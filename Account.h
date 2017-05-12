@@ -10,6 +10,8 @@ private:
 	string UserID;
 public:
 	Account();
+	Account(string name, string pass, string id, bool r, bool l, bool a);
+	Account createAccount();
 	void setAccountName(string ano);
 	void setAccountPassword(string pas);
 	void setActive();
@@ -18,6 +20,8 @@ public:
 	//bool getActive();//
 	void getProfile();
 	void changeAccountPassword();
+	void getNotice();
+	int LevashteinDistance(string str1, string str2);
 };
 
 #endif
