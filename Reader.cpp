@@ -1,3 +1,4 @@
+
 #include<iostream>
 #include<fstream>
 #include<string>
@@ -166,3 +167,4 @@ int Account::LevashteinDistance(string str1, string str2)
 		}
 	return cost_table[len_str1][len_str2];
 }
+
