@@ -18,7 +18,7 @@ Account::Account()
 
 Account::Account(string name, string pass, string id, bool r, bool l, bool a)
 {
-	AccountName = name;
+  	AccountName = name;
 	AccountPassword = pass;
 	UserID = id;
 	admin = a;
