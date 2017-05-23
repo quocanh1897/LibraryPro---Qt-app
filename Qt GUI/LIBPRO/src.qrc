@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>sdh.png</file>
+        <file>iconwindow.png</file>
+    </qresource>
+</RCC>

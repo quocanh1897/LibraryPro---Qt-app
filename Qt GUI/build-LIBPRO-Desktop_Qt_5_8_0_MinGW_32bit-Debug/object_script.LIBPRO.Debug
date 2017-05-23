@@ -1,0 +1,16 @@
+INPUT(
+./debug\main.o
+./debug\admin.o
+./debug\librarian.o
+./debug\reader.o
+./debug\signupdialog.o
+./debug\mainwindow.o
+./debug\user.o
+./debug\qrc_src.o
+./debug\moc_admin.o
+./debug\moc_librarian.o
+./debug\moc_reader.o
+./debug\moc_signupdialog.o
+./debug\moc_mainwindow.o
+./debug\moc_user.o
+);

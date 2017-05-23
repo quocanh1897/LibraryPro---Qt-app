@@ -1,0 +1,16 @@
+INPUT(
+./release\main.o
+./release\admin.o
+./release\librarian.o
+./release\reader.o
+./release\signupdialog.o
+./release\mainwindow.o
+./release\user.o
+./release\qrc_src.o
+./release\moc_admin.o
+./release\moc_librarian.o
+./release\moc_reader.o
+./release\moc_signupdialog.o
+./release\moc_mainwindow.o
+./release\moc_user.o
+);
