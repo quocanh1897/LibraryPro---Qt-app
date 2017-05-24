@@ -3,22 +3,22 @@
 #include "mainwindow.h"
 #include "workspace.h"
 #include <QMessageBox>
+#include <QString>
 bool breader=0,blibrarian=0,badmin=0;
 signin::signin(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::signin)
-{
-    ui->setupUi(this);
-    QSqlDatabase mydb=QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("d:/sqlite/book.sqlite");
-    if (!mydb.open())
-       {
-          qDebug() << "Error: connection with database fail";
-       }
-       else
-       {
+    ui(new Ui::signin){
+        ui->setupUi(this);
+        QString path=QCoreApplication::applicationDirPath();
+        path+="/book.sqlite";
+        QSqlDatabase mydb=QSqlDatabase::addDatabase("QSQLITE");
+        mydb.setDatabaseName(path);
+        if (!mydb.open()) {
+          qDebug() << "Error: connection with database fail"<<path;
+        }
+        else {
           qDebug() << "Database: connection ok";
-       }
+        }
 
 }
 

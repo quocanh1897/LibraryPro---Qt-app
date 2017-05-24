@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1015</width>
-    <height>717</height>
+    <height>653</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,7 +30,7 @@
       <x>11</x>
       <y>225</y>
       <width>370</width>
-      <height>411</height>
+      <height>421</height>
      </rect>
     </property>
     <property name="title">
@@ -95,7 +95,7 @@
       <x>392</x>
       <y>225</y>
       <width>621</width>
-      <height>481</height>
+      <height>421</height>
      </rect>
     </property>
     <property name="title">
@@ -150,7 +150,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -289,6 +289,7 @@
      </item>
     </layout>
    </widget>
+   <zorder>layoutWidget</zorder>
    <zorder>groupBox_2</zorder>
    <zorder>groupBox</zorder>
   </widget>
