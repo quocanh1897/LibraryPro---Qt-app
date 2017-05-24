@@ -5,6 +5,7 @@
 #include <QtSql>
 #include <QtDebug>
 #include <QFileInfo>
+extern bool breader,blibrarian,badmin;
 namespace Ui {
 class signin;
 }

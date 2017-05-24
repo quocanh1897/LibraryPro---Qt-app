@@ -2,5 +2,12 @@
     <qresource prefix="/">
         <file>sdh.png</file>
         <file>iconwindow.png</file>
+        <file>cart.png</file>
+        <file>login.png</file>
+        <file>search-icon.png</file>
+        <file>signin1.png</file>
+        <file>signo.png</file>
+        <file>signup.png</file>
+        <file>users.png</file>
     </qresource>
 </RCC>

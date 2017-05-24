@@ -18,6 +18,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_6_clicked()
 {
+
     SignUpDialog  sd;
     sd.setModal(true);
     sd.exec();
@@ -25,7 +26,13 @@ void MainWindow::on_pushButton_6_clicked()
 
 void MainWindow::on_pushButton_5_clicked()
 {
+
    signin signin;
    signin.setModal(true);
    signin.exec();
+}
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    this->close();
 }

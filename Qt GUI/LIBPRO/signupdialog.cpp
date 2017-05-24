@@ -12,3 +12,8 @@ SignUpDialog::~SignUpDialog()
 {
     delete ui;
 }
+
+void SignUpDialog::on_pushButton_clicked()
+{
+    this->close();
+}

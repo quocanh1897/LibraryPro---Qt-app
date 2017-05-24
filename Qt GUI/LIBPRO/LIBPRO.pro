@@ -30,7 +30,8 @@ SOURCES += main.cpp\
     signupdialog.cpp \
     mainwindow.cpp \
     user.cpp \
-    signin.cpp
+    signin.cpp \
+    workspace.cpp
 
 HEADERS  += \
     databaseconnection.h \
@@ -40,7 +41,8 @@ HEADERS  += \
     signupdialog.h \
     mainwindow.h \
     user.h \
-    signin.h
+    signin.h \
+    workspace.h
 
 FORMS    += \
     admin.ui \
@@ -49,7 +51,8 @@ FORMS    += \
     signupdialog.ui \
     mainwindow.ui \
     user.ui \
-    signin.ui
+    signin.ui \
+    workspace.ui
 
 RESOURCES += \
     src.qrc
