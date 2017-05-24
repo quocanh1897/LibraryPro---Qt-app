@@ -9,6 +9,7 @@ signin::signin(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::signin){
         ui->setupUi(this);
+        this->setFixedSize(287,136);
         QString path=QCoreApplication::applicationDirPath();
         path+="/book.sqlite";
         QSqlDatabase mydb=QSqlDatabase::addDatabase("QSQLITE");

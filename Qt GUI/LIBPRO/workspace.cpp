@@ -9,6 +9,7 @@ workspace::workspace(QWidget *parent) :
     ui(new Ui::workspace)
 {
     ui->setupUi(this);
+    this->setFixedSize(780,569);
     if(breader==1) ui->tabWidget->addTab(new reader(),QString("Độc giả"));
     if(blibrarian==1) ui->tabWidget->addTab(new admin(),QString("Thủ thư"));
     if(badmin==1) ui->tabWidget->addTab(new librarian(),QString("Quản lý"));
