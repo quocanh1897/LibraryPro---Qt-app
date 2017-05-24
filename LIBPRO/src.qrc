@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>sdh.png</file>
+        <file>iconwindow.png</file>
+        <file>search-icon.png</file>
+        <file>add.png</file>
+        <file>login.png</file>
+        <file>pen.png</file>
+        <file>signin1.png</file>
+        <file>signo.png</file>
+        <file>signup.png</file>
+        <file>users.png</file>
+        <file>cart.png</file>
+    </qresource>
+</RCC>
