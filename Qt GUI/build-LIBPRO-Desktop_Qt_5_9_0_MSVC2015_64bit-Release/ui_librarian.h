@@ -21,7 +21,7 @@
 #include <QtWidgets/QListView>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QTableWidget>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -49,7 +49,7 @@ public:
     QLineEdit *lineEdit;
     QPushButton *pushButton_5;
     QHBoxLayout *horizontalLayout_2;
-    QTableWidget *tableWidget;
+    QTableView *tableView_1;
     QVBoxLayout *verticalLayout;
     QSpacerItem *verticalSpacer_2;
     QPushButton *pushButton_6;
@@ -139,10 +139,10 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        tableWidget = new QTableWidget(groupBox);
-        tableWidget->setObjectName(QStringLiteral("tableWidget"));
+        tableView_1 = new QTableView(groupBox);
+        tableView_1->setObjectName(QStringLiteral("tableView_1"));
 
-        horizontalLayout_2->addWidget(tableWidget);
+        horizontalLayout_2->addWidget(tableView_1);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));

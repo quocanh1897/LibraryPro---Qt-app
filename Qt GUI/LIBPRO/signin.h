@@ -23,7 +23,7 @@ private slots:
 
 private:
     Ui::signin *ui;
-    QSqlDatabase mydb;
+    //QSqlDatabase mydb;
 };
 
 #endif // SIGNIN_H
