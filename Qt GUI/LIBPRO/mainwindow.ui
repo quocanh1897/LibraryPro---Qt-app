@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1024</width>
-    <height>654</height>
+    <height>578</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,86 +29,92 @@
      <rect>
       <x>11</x>
       <y>225</y>
-      <width>370</width>
-      <height>421</height>
+      <width>561</width>
+      <height>341</height>
      </rect>
     </property>
     <property name="title">
-     <string>Tìm kiếm theo</string>
+     <string>Tìm sách</string>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout_3">
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <widget class="QComboBox" name="comboBox">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
-         </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="2,9,1">
          <item>
-          <property name="text">
-           <string>Tựa đề</string>
-          </property>
+          <widget class="QComboBox" name="comboBox">
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <item>
+            <property name="text">
+             <string>Tất cả</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tựa đề</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ISBN</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>NXB</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Năm</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tác giả</string>
+            </property>
+           </item>
+          </widget>
          </item>
          <item>
-          <property name="text">
-           <string>Tác giả</string>
-          </property>
+          <widget class="QLineEdit" name="lineEdit">
+           <property name="minimumSize">
+            <size>
+             <width>201</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>524</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
          </item>
-        </widget>
+         <item>
+          <widget class="QPushButton" name="pushButton_11">
+           <property name="text">
+            <string>Tìm</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit">
-         <property name="minimumSize">
-          <size>
-           <width>201</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>524</width>
-           <height>20</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_11">
-         <property name="text">
-          <string>Tìm</string>
-         </property>
-        </widget>
+        <widget class="QTableView" name="tableView_2"/>
        </item>
       </layout>
      </item>
      <item>
-      <widget class="QListView" name="listView"/>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QGroupBox" name="groupBox_2">
-    <property name="geometry">
-     <rect>
-      <x>392</x>
-      <y>225</y>
-      <width>621</width>
-      <height>421</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>Bảng tin</string>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QTableView" name="tableView"/>
-     </item>
-     <item>
       <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0">
        <item>
-        <widget class="QPushButton" name="pushButton_8">
+        <widget class="QPushButton" name="pushButton_muon">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -150,13 +156,31 @@
      </item>
     </layout>
    </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>582</x>
+      <y>225</y>
+      <width>431</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Bảng tin</string>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QTableView" name="tableView"/>
+     </item>
+    </layout>
+   </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>12</y>
-      <width>1002</width>
-      <height>203</height>
+      <width>1001</width>
+      <height>211</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -188,33 +212,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
-        <widget class="QPushButton" name="pushButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Trang chủ</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_2">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Thông báo</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QPushButton" name="pushButton_lienhe">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>

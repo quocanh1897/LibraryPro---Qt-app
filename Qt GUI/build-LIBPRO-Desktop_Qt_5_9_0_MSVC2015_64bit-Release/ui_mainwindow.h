@@ -19,7 +19,6 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
@@ -34,26 +33,25 @@ class Ui_MainWindow
 public:
     QWidget *centralWidget;
     QGroupBox *groupBox;
+    QHBoxLayout *horizontalLayout_3;
     QVBoxLayout *verticalLayout_3;
     QHBoxLayout *horizontalLayout_2;
     QComboBox *comboBox;
     QLineEdit *lineEdit;
     QPushButton *pushButton_11;
-    QListView *listView;
+    QTableView *tableView_2;
+    QVBoxLayout *verticalLayout;
+    QPushButton *pushButton_muon;
+    QPushButton *pushButton_9;
+    QSpacerItem *verticalSpacer;
     QGroupBox *groupBox_2;
     QHBoxLayout *horizontalLayout;
     QTableView *tableView;
-    QVBoxLayout *verticalLayout;
-    QPushButton *pushButton_8;
-    QPushButton *pushButton_9;
-    QSpacerItem *verticalSpacer;
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_2;
     QLabel *lbl;
     QHBoxLayout *horizontalLayout_4;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
+    QPushButton *pushButton_lienhe;
     QPushButton *pushButton_4;
     QPushButton *pushButton_5;
     QPushButton *pushButton_6;
@@ -64,7 +62,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1024, 654);
+        MainWindow->resize(1024, 578);
         QIcon icon;
         icon.addFile(QStringLiteral(":/iconwindow.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -74,10 +72,13 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         groupBox = new QGroupBox(centralWidget);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(11, 225, 370, 421));
-        verticalLayout_3 = new QVBoxLayout(groupBox);
+        groupBox->setGeometry(QRect(11, 225, 561, 341));
+        horizontalLayout_3 = new QHBoxLayout(groupBox);
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setSpacing(6);
-        verticalLayout_3->setContentsMargins(11, 11, 11, 11);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
@@ -100,40 +101,34 @@ public:
 
         horizontalLayout_2->addWidget(pushButton_11);
 
+        horizontalLayout_2->setStretch(0, 2);
+        horizontalLayout_2->setStretch(1, 9);
+        horizontalLayout_2->setStretch(2, 1);
 
         verticalLayout_3->addLayout(horizontalLayout_2);
 
-        listView = new QListView(groupBox);
-        listView->setObjectName(QStringLiteral("listView"));
+        tableView_2 = new QTableView(groupBox);
+        tableView_2->setObjectName(QStringLiteral("tableView_2"));
 
-        verticalLayout_3->addWidget(listView);
+        verticalLayout_3->addWidget(tableView_2);
 
-        groupBox_2 = new QGroupBox(centralWidget);
-        groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        groupBox_2->setGeometry(QRect(392, 225, 621, 421));
-        horizontalLayout = new QHBoxLayout(groupBox_2);
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        tableView = new QTableView(groupBox_2);
-        tableView->setObjectName(QStringLiteral("tableView"));
 
-        horizontalLayout->addWidget(tableView);
+        horizontalLayout_3->addLayout(verticalLayout_3);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(6);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        pushButton_8 = new QPushButton(groupBox_2);
-        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
+        pushButton_muon = new QPushButton(groupBox);
+        pushButton_muon->setObjectName(QStringLiteral("pushButton_muon"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(pushButton_8->sizePolicy().hasHeightForWidth());
-        pushButton_8->setSizePolicy(sizePolicy);
+        sizePolicy.setHeightForWidth(pushButton_muon->sizePolicy().hasHeightForWidth());
+        pushButton_muon->setSizePolicy(sizePolicy);
 
-        verticalLayout->addWidget(pushButton_8);
+        verticalLayout->addWidget(pushButton_muon);
 
-        pushButton_9 = new QPushButton(groupBox_2);
+        pushButton_9 = new QPushButton(groupBox);
         pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
         sizePolicy.setHeightForWidth(pushButton_9->sizePolicy().hasHeightForWidth());
         pushButton_9->setSizePolicy(sizePolicy);
@@ -145,11 +140,23 @@ public:
         verticalLayout->addItem(verticalSpacer);
 
 
-        horizontalLayout->addLayout(verticalLayout);
+        horizontalLayout_3->addLayout(verticalLayout);
+
+        groupBox_2 = new QGroupBox(centralWidget);
+        groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
+        groupBox_2->setGeometry(QRect(582, 225, 431, 341));
+        horizontalLayout = new QHBoxLayout(groupBox_2);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        tableView = new QTableView(groupBox_2);
+        tableView->setObjectName(QStringLiteral("tableView"));
+
+        horizontalLayout->addWidget(tableView);
 
         layoutWidget = new QWidget(centralWidget);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 12, 1002, 203));
+        layoutWidget->setGeometry(QRect(10, 12, 1001, 211));
         verticalLayout_2 = new QVBoxLayout(layoutWidget);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -172,26 +179,12 @@ public:
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setSpacing(6);
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        pushButton = new QPushButton(layoutWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
-        pushButton->setSizePolicy(sizePolicy);
+        pushButton_lienhe = new QPushButton(layoutWidget);
+        pushButton_lienhe->setObjectName(QStringLiteral("pushButton_lienhe"));
+        sizePolicy.setHeightForWidth(pushButton_lienhe->sizePolicy().hasHeightForWidth());
+        pushButton_lienhe->setSizePolicy(sizePolicy);
 
-        horizontalLayout_4->addWidget(pushButton);
-
-        pushButton_2 = new QPushButton(layoutWidget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        sizePolicy.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
-        pushButton_2->setSizePolicy(sizePolicy);
-
-        horizontalLayout_4->addWidget(pushButton_2);
-
-        pushButton_3 = new QPushButton(layoutWidget);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        sizePolicy.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
-        pushButton_3->setSizePolicy(sizePolicy);
-
-        horizontalLayout_4->addWidget(pushButton_3);
+        horizontalLayout_4->addWidget(pushButton_lienhe);
 
         pushButton_4 = new QPushButton(layoutWidget);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
@@ -239,20 +232,22 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
-        groupBox->setTitle(QApplication::translate("MainWindow", "T\303\254m ki\341\272\277m theo", Q_NULLPTR));
+        groupBox->setTitle(QApplication::translate("MainWindow", "T\303\254m s\303\241ch", Q_NULLPTR));
         comboBox->clear();
         comboBox->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "T\341\272\245t c\341\272\243", Q_NULLPTR)
          << QApplication::translate("MainWindow", "T\341\273\261a \304\221\341\273\201", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "ISBN", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "NXB", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "N\304\203m", Q_NULLPTR)
          << QApplication::translate("MainWindow", "T\303\241c gi\341\272\243", Q_NULLPTR)
         );
         pushButton_11->setText(QApplication::translate("MainWindow", "T\303\254m", Q_NULLPTR));
-        groupBox_2->setTitle(QApplication::translate("MainWindow", "B\341\272\243ng tin", Q_NULLPTR));
-        pushButton_8->setText(QApplication::translate("MainWindow", "M\306\260\341\273\243n s\303\241ch", Q_NULLPTR));
+        pushButton_muon->setText(QApplication::translate("MainWindow", "M\306\260\341\273\243n s\303\241ch", Q_NULLPTR));
         pushButton_9->setText(QApplication::translate("MainWindow", "\304\220\341\273\215c th\341\273\255", Q_NULLPTR));
+        groupBox_2->setTitle(QApplication::translate("MainWindow", "B\341\272\243ng tin", Q_NULLPTR));
         lbl->setText(QString());
-        pushButton->setText(QApplication::translate("MainWindow", "Trang ch\341\273\247", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("MainWindow", "Th\303\264ng b\303\241o", Q_NULLPTR));
-        pushButton_3->setText(QApplication::translate("MainWindow", "Li\303\252n h\341\273\207", Q_NULLPTR));
+        pushButton_lienhe->setText(QApplication::translate("MainWindow", "Li\303\252n h\341\273\207", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("MainWindow", "Quy \304\221\341\273\213nh", Q_NULLPTR));
         pushButton_5->setText(QApplication::translate("MainWindow", "\304\220\304\203ng nh\341\272\255p", Q_NULLPTR));
         pushButton_6->setText(QApplication::translate("MainWindow", "\304\220\304\203ng k\303\255", Q_NULLPTR));

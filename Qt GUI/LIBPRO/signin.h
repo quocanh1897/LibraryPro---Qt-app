@@ -6,6 +6,7 @@
 #include <QtDebug>
 #include <QFileInfo>
 extern bool breader,blibrarian,badmin;
+extern QString accountname;
 namespace Ui {
 class signin;
 }

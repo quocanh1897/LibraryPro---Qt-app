@@ -33,8 +33,6 @@ public:
     QVBoxLayout *verticalLayout_7;
     QHBoxLayout *horizontalLayout_5;
     QPushButton *pushButton_12;
-    QPushButton *pushButton_13;
-    QPushButton *pushButton_10;
     QPushButton *pushButton_11;
     QSpacerItem *horizontalSpacer;
     QGroupBox *groupBox_2;
@@ -47,7 +45,6 @@ public:
     QHBoxLayout *horizontalLayout_4;
     QTableView *tableView;
     QVBoxLayout *verticalLayout_4;
-    QSpacerItem *verticalSpacer_4;
     QPushButton *pushButton_8;
     QPushButton *pushButton_6;
     QPushButton *pushButton_9;
@@ -57,13 +54,9 @@ public:
     QVBoxLayout *verticalLayout_3;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout;
-    QComboBox *comboBox;
-    QLineEdit *lineEdit;
-    QPushButton *pushButton;
     QHBoxLayout *horizontalLayout_2;
     QTableWidget *tableWidget;
     QVBoxLayout *verticalLayout;
-    QSpacerItem *verticalSpacer_2;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
@@ -83,16 +76,6 @@ public:
         pushButton_12->setObjectName(QStringLiteral("pushButton_12"));
 
         horizontalLayout_5->addWidget(pushButton_12);
-
-        pushButton_13 = new QPushButton(admin);
-        pushButton_13->setObjectName(QStringLiteral("pushButton_13"));
-
-        horizontalLayout_5->addWidget(pushButton_13);
-
-        pushButton_10 = new QPushButton(admin);
-        pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
-
-        horizontalLayout_5->addWidget(pushButton_10);
 
         pushButton_11 = new QPushButton(admin);
         pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
@@ -127,6 +110,9 @@ public:
 
         horizontalLayout_3->addWidget(pushButton_5);
 
+        horizontalLayout_3->setStretch(0, 2);
+        horizontalLayout_3->setStretch(1, 11);
+        horizontalLayout_3->setStretch(2, 1);
 
         verticalLayout_6->addLayout(horizontalLayout_3);
 
@@ -141,10 +127,6 @@ public:
 
         verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_4->addItem(verticalSpacer_4);
-
         pushButton_8 = new QPushButton(groupBox_2);
         pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
 
@@ -189,21 +171,6 @@ public:
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        comboBox = new QComboBox(groupBox);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
-
-        horizontalLayout->addWidget(comboBox);
-
-        lineEdit = new QLineEdit(groupBox);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-
-        horizontalLayout->addWidget(lineEdit);
-
-        pushButton = new QPushButton(groupBox);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-
-        horizontalLayout->addWidget(pushButton);
-
 
         verticalLayout_2->addLayout(horizontalLayout);
 
@@ -216,10 +183,6 @@ public:
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout->addItem(verticalSpacer_2);
-
         pushButton_2 = new QPushButton(groupBox);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
 
@@ -235,7 +198,7 @@ public:
 
         verticalLayout->addWidget(pushButton_4);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer = new QSpacerItem(17, 21, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout->addItem(verticalSpacer);
 
@@ -260,33 +223,25 @@ public:
     void retranslateUi(QWidget *admin)
     {
         admin->setWindowTitle(QApplication::translate("admin", "Admin", Q_NULLPTR));
-        pushButton_12->setText(QApplication::translate("admin", "Thong Bao", Q_NULLPTR));
-        pushButton_13->setText(QApplication::translate("admin", "Tac vu", Q_NULLPTR));
-        pushButton_10->setText(QApplication::translate("admin", "Lien he", Q_NULLPTR));
-        pushButton_11->setText(QApplication::translate("admin", "Hop thu", Q_NULLPTR));
-        groupBox_2->setTitle(QApplication::translate("admin", "Quan Li Tai Khoan", Q_NULLPTR));
+        pushButton_12->setText(QApplication::translate("admin", "Th\303\264ng b\303\241o", Q_NULLPTR));
+        pushButton_11->setText(QApplication::translate("admin", "H\341\273\231p th\306\260", Q_NULLPTR));
+        groupBox_2->setTitle(QApplication::translate("admin", "Qu\341\272\243n l\303\275 t\303\240i kho\341\272\243n", Q_NULLPTR));
         comboBox_2->clear();
         comboBox_2->insertItems(0, QStringList()
-         << QApplication::translate("admin", "Ten TK", Q_NULLPTR)
-         << QApplication::translate("admin", "Vai tro", Q_NULLPTR)
-         << QApplication::translate("admin", "User", Q_NULLPTR)
+         << QApplication::translate("admin", "T\303\252n t\303\240i kho\341\272\243n", Q_NULLPTR)
+         << QApplication::translate("admin", "Ng\306\260\341\273\235i d\303\271ng", Q_NULLPTR)
+         << QApplication::translate("admin", "CMND/MSSV", Q_NULLPTR)
+         << QApplication::translate("admin", "Vai tr\303\262", Q_NULLPTR)
         );
         pushButton_5->setText(QApplication::translate("admin", "Tim", Q_NULLPTR));
-        pushButton_8->setText(QApplication::translate("admin", "Them vao", Q_NULLPTR));
-        pushButton_6->setText(QApplication::translate("admin", "Chinh Sua", Q_NULLPTR));
-        pushButton_9->setText(QApplication::translate("admin", "Xoa", Q_NULLPTR));
-        pushButton_7->setText(QApplication::translate("admin", "Reset Pass", Q_NULLPTR));
-        groupBox->setTitle(QApplication::translate("admin", "Quan Li Nguoi Dung", Q_NULLPTR));
-        comboBox->clear();
-        comboBox->insertItems(0, QStringList()
-         << QApplication::translate("admin", "ID", Q_NULLPTR)
-         << QApplication::translate("admin", "PIN", Q_NULLPTR)
-         << QApplication::translate("admin", "Name", Q_NULLPTR)
-        );
-        pushButton->setText(QApplication::translate("admin", "Tim", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("admin", "Them vao", Q_NULLPTR));
-        pushButton_3->setText(QApplication::translate("admin", "Chinh sua", Q_NULLPTR));
-        pushButton_4->setText(QApplication::translate("admin", "Xoa", Q_NULLPTR));
+        pushButton_8->setText(QApplication::translate("admin", "Th\303\252m", Q_NULLPTR));
+        pushButton_6->setText(QApplication::translate("admin", "Ch\341\273\211nh s\341\273\255a", Q_NULLPTR));
+        pushButton_9->setText(QApplication::translate("admin", "Xo\303\241", Q_NULLPTR));
+        pushButton_7->setText(QApplication::translate("admin", "Reset m\341\272\255t kh\341\272\251u", Q_NULLPTR));
+        groupBox->setTitle(QApplication::translate("admin", "T\303\241c v\341\273\245", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("admin", "Th\303\252m", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("admin", "Ch\341\273\211nh s\341\273\255a", Q_NULLPTR));
+        pushButton_4->setText(QApplication::translate("admin", "Xo\303\241", Q_NULLPTR));
     } // retranslateUi
 
 };

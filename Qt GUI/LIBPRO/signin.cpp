@@ -6,12 +6,13 @@
 #include <QMessageBox>
 #include <QString>
 bool breader=0,blibrarian=0,badmin=0;
+QString acc=NULL;
 signin::signin(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::signin){
         ui->setupUi(this);
         this->setFixedSize(287,136);
-
+        this->setWindowTitle("Đăng Nhập");
         connectDatabase searchDB;
 
         if(!searchDB.openConnection()){
@@ -27,11 +28,11 @@ signin::~signin()
 {
     delete ui;
 }
-
+QString accountname,password;
 void signin::on_pushButton_clicked()
 {
 
-    QString accountname,password;
+
     accountname=ui->lineEdit_accountname->text();
     password=ui->lineEdit_password->text();
     QSqlQuery qry;

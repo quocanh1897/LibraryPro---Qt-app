@@ -30,7 +30,7 @@ void librarian::on_pushButton_5_clicked()
 
         if(ui->comboBox_2->currentText() == "ISBN"){
 
-            databaseQuery->prepare("select *from SACH where ISBN like '%'||:isbn||'%';");
+            databaseQuery->prepare("select Title, isbn from SACH where ISBN like '%'||:isbn||'%';");
             databaseQuery->bindValue(":isbn",ui->lineEdit->text().toInt());
             databaseQuery->exec();
         }
@@ -38,7 +38,7 @@ void librarian::on_pushButton_5_clicked()
 
         else if(ui->comboBox_2->currentText() == "Tua de"){
 
-            databaseQuery->prepare("select *from SACH where Tiltle like '%'||:name||'%';");
+            databaseQuery->prepare("select title,author from SACH where Title like '%'||:name||'%';");
             databaseQuery->bindValue(":name",ui->lineEdit->text());
             databaseQuery->exec();
         }
@@ -46,7 +46,7 @@ void librarian::on_pushButton_5_clicked()
 
         else if(ui->comboBox_2->currentText() == "Tac gia"){
 
-            databaseQuery->prepare("select *from SACH where Author like '%'||:author||'%';");
+            databaseQuery->prepare("select title,author from SACH where Author like '%'||:author||'%';");
             databaseQuery->bindValue(":author",ui->lineEdit->text());
             databaseQuery->exec();
         }
@@ -55,7 +55,7 @@ void librarian::on_pushButton_5_clicked()
         else if(ui->comboBox_2->currentText() == "Nam"){
 
 
-            databaseQuery->prepare("select *from SACH where year = :year;");
+            databaseQuery->prepare("select title,year from SACH where year = :year;");
             databaseQuery->bindValue(":year",ui->lineEdit->text().toInt());
             databaseQuery->exec();
         }
@@ -63,7 +63,7 @@ void librarian::on_pushButton_5_clicked()
 
         else if(ui->comboBox_2->currentText() == "NXB"){
 
-            databaseQuery->prepare("select *from SACH where publisher like '%'||:nxb||'%';");
+            databaseQuery->prepare("select title,publisher from SACH where publisher like '%'||:nxb||'%';");
             databaseQuery->bindValue(":nxb",ui->lineEdit->text());
             databaseQuery->exec();
         }
@@ -71,13 +71,12 @@ void librarian::on_pushButton_5_clicked()
 
         else if(ui->comboBox_2->currentText() == "Tat ca"){
 
-            databaseQuery->exec("select *from SACH;");
+            databaseQuery->exec("select title,author from SACH;");
         }
 
 
         databaseModel->setQuery(*databaseQuery);
         ui->tableView_1->setModel(databaseModel);
-        ui->tableView_1->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-
+        ui->tableView_1->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         searchDB.closeConnection();
 }

@@ -22,28 +22,14 @@
      <item>
       <widget class="QPushButton" name="pushButton_12">
        <property name="text">
-        <string>Thong Bao</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_13">
-       <property name="text">
-        <string>Tac vu</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_10">
-       <property name="text">
-        <string>Lien he</string>
+        <string>Thông báo</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_11">
        <property name="text">
-        <string>Hop thu</string>
+        <string>Hộp thư</string>
        </property>
       </widget>
      </item>
@@ -65,26 +51,31 @@
    <item>
     <widget class="QGroupBox" name="groupBox_2">
      <property name="title">
-      <string>Quan Li Tai Khoan</string>
+      <string>Quản lý tài khoản</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_6">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,11,1">
         <item>
          <widget class="QComboBox" name="comboBox_2">
           <item>
            <property name="text">
-            <string>Ten TK</string>
+            <string>Tên tài khoản</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Vai tro</string>
+            <string>Người dùng</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>User</string>
+            <string>CMND/MSSV</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Vai trò</string>
            </property>
           </item>
          </widget>
@@ -111,43 +102,30 @@
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_4">
             <item>
-             <spacer name="verticalSpacer_4">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>40</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
              <widget class="QPushButton" name="pushButton_8">
               <property name="text">
-               <string>Them vao</string>
+               <string>Thêm</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QPushButton" name="pushButton_6">
               <property name="text">
-               <string>Chinh Sua</string>
+               <string>Chỉnh sửa</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QPushButton" name="pushButton_9">
               <property name="text">
-               <string>Xoa</string>
+               <string>Xoá</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QPushButton" name="pushButton_7">
               <property name="text">
-               <string>Reset Pass</string>
+               <string>Reset mật khẩu</string>
               </property>
              </widget>
             </item>
@@ -176,43 +154,13 @@
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>Quan Li Nguoi Dung</string>
+      <string>Tác vụ</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <item>
-           <widget class="QComboBox" name="comboBox">
-            <item>
-             <property name="text">
-              <string>ID</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>PIN</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Name</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="lineEdit"/>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButton">
-            <property name="text">
-             <string>Tim</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+         <layout class="QHBoxLayout" name="horizontalLayout" stretch=""/>
         </item>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -222,36 +170,23 @@
           <item>
            <layout class="QVBoxLayout" name="verticalLayout">
             <item>
-             <spacer name="verticalSpacer_2">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>40</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
              <widget class="QPushButton" name="pushButton_2">
               <property name="text">
-               <string>Them vao</string>
+               <string>Thêm</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QPushButton" name="pushButton_3">
               <property name="text">
-               <string>Chinh sua</string>
+               <string>Chỉnh sửa</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QPushButton" name="pushButton_4">
               <property name="text">
-               <string>Xoa</string>
+               <string>Xoá</string>
               </property>
              </widget>
             </item>
@@ -262,8 +197,8 @@
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>20</width>
-                <height>40</height>
+                <width>17</width>
+                <height>21</height>
                </size>
               </property>
              </spacer>

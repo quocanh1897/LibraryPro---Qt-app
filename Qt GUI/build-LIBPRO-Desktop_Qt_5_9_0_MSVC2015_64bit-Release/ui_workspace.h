@@ -28,7 +28,7 @@ class Ui_workspace
 {
 public:
     QTabWidget *tabWidget;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QPushButton *pushButton;
     QLabel *label;
@@ -39,22 +39,22 @@ public:
     {
         if (workspace->objectName().isEmpty())
             workspace->setObjectName(QStringLiteral("workspace"));
-        workspace->resize(780, 569);
+        workspace->resize(1156, 714);
         tabWidget = new QTabWidget(workspace);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(10, 40, 761, 521));
-        widget = new QWidget(workspace);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(10, 10, 751, 25));
-        horizontalLayout = new QHBoxLayout(widget);
+        tabWidget->setGeometry(QRect(10, 40, 1141, 671));
+        layoutWidget = new QWidget(workspace);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(10, 10, 1141, 25));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        pushButton = new QPushButton(widget);
+        pushButton = new QPushButton(layoutWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
 
         horizontalLayout->addWidget(pushButton);
 
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName(QStringLiteral("label"));
 
         horizontalLayout->addWidget(label);
@@ -63,7 +63,7 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer);
 
-        pushButton_2 = new QPushButton(widget);
+        pushButton_2 = new QPushButton(layoutWidget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
 
         horizontalLayout->addWidget(pushButton_2);

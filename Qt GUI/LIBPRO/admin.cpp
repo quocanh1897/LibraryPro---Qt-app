@@ -1,6 +1,7 @@
 #include "admin.h"
 #include "ui_admin.h"
 #include "databaseconnection.h"
+#include <QTableView>
 admin::admin(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::admin)
@@ -25,45 +26,48 @@ void admin::on_pushButton_5_clicked()
 
     QSqlQueryModel* databaseModel = new QSqlQueryModel;
 
-    QSqlQuery* databaseQuery = new QSqlQuery(searchDB.mydb);
+    QSqlQuery* aqry = new QSqlQuery(searchDB.mydb);
 
 
-    if(ui->comboBox_2->currentText() == "Tai khoan"){
-
-        databaseQuery->prepare("select *from TAIKHOAN where TAIKHOAN = :taikhoan ;");
-        databaseQuery->bindValue(":taikhoan",ui->lineEdit->text());
-        databaseQuery->exec();
-    }
-    if(ui->comboBox_2->currentText() == "Tat ca"){
-        databaseQuery->exec("select *from TAIKHOAN ;");
+    if(ui->comboBox_2->currentText() == "Tên tài khoản"){
+        aqry->prepare("select t.CMND, t.TAIKHOAN, n.HOTEN from TAIKHOAN as t JOIN NGUOIDUNG as n on t.cmnd=n.cmnd where TAIKHOAN like '%'||:taikhoan||'%';");
+        aqry->bindValue(":taikhoan",ui->lineEdit_2->text());
+        aqry->exec();
     }
 
-    else if(ui->comboBox_2->currentText() == "CMND"){
+    else if(ui->comboBox_2->currentText() == "CMND/MSSV"){
 
-        databaseQuery->prepare("select *from TAIKHOAN where CMND =  :cmnd ;");
-        databaseQuery->bindValue(":cmnd",ui->lineEdit->text());
-        databaseQuery->exec();
+        aqry->prepare("select t.CMND, t.TAIKHOAN, n.HOTEN from TAIKHOAN as t JOIN NGUOIDUNG as n on t.cmnd=n.cmnd where t.CMND like '%'||:cmnd||'%';");
+        aqry->bindValue(":cmnd",ui->lineEdit_2->text());
+        aqry->exec();
+    }
+
+    else if(ui->comboBox_2->currentText() == "Người dùng"){
+
+        aqry->prepare("select t.CMND, t.TAIKHOAN, n.HOTEN from TAIKHOAN as t JOIN NGUOIDUNG as n on t.cmnd=n.cmnd where n.HOTEN like '%'||:hoten||'%';");
+        aqry->bindValue(":hoten",ui->lineEdit_2->text());
+        aqry->exec();
+    }
+
+    else if(ui->comboBox_2->currentText() == "Vai trò"){
+        QString vaitro=ui->lineEdit_2->text();
+        if(vaitro=="thu thu"||vaitro=="thủ thư"||vaitro=="Thủ thư"){
+            aqry->prepare("SELECT t.TAIKHOAN,n.HOTEN,t.CMND FROM TAIKHOAN as t JOIN NGUOIDUNG as n on t.cmnd = n.cmnd where t.THUTHU='true'");
+            aqry->exec();
+        }
+        else if(vaitro=="quan ly"||vaitro=="quản lý"||vaitro=="Quản lý"){
+            aqry->prepare("SELECT t.TAIKHOAN,n.HOTEN,t.CMND FROM TAIKHOAN as t JOIN NGUOIDUNG as n on t.cmnd = n.cmnd where t.QUANLY='true'");
+            aqry->exec();
+        }
+        else if(vaitro=="độc giả"||vaitro=="doc gia"||vaitro=="đọc giả"||vaitro=="Độc giả"){
+            aqry->prepare("SELECT t.TAIKHOAN,n.HOTEN,t.CMND FROM TAIKHOAN as t JOIN NGUOIDUNG as n on t.cmnd = n.cmnd where t.DOCGIA='true'");
+            aqry->exec();
+        }
     }
 
 
-    else if(ui->comboBox_2->currentText() == "Quan Ly"){
-        databaseQuery->exec("select *from TAIKHOAN where QUANLY = 'TRUE';");
-    }
-
-
-    else if(ui->comboBox_2->currentText() == "Doc Gia"){
-        databaseQuery->exec("select *from TAIKHOAN where DOCGIA = 'TRUE';");
-    }
-
-    else if(ui->comboBox_2->currentText() == "Thu Thu"){
-        databaseQuery->exec("select *from TAIKHOAN where THUTHU = 'TRUE';");
-    }
-    //
-
-
-    databaseModel->setQuery(*databaseQuery);
+    databaseModel->setQuery(*aqry);
     ui->tableView->setModel(databaseModel);
-    ui->tableView->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-
+    ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     searchDB.closeConnection();
 }
