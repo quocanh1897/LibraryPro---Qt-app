@@ -21,7 +21,6 @@ signin::signin(QWidget *parent) :
 
         searchDB.openConnection();
 
-
 }
 
 signin::~signin()
@@ -31,8 +30,6 @@ signin::~signin()
 QString accountname,password;
 void signin::on_pushButton_clicked()
 {
-
-
     accountname=ui->lineEdit_accountname->text();
     password=ui->lineEdit_password->text();
     QSqlQuery qry;
@@ -50,7 +47,6 @@ void signin::on_pushButton_clicked()
        else
            QMessageBox::warning(this,"Đăng nhập thất bại!","Tài khoản hoặc mật khẩu không đúng!");
     }
-
 
 }
 

@@ -3,6 +3,7 @@
 #include "signupdialog.h"
 #include "user.h"
 #include "signin.h"
+#include "noiquy.h"
 #include "databaseconnection.h"
 #include <QMessageBox>
 MainWindow::MainWindow(QWidget *parent) :
@@ -129,4 +130,11 @@ void MainWindow::on_pushButton_lienhe_clicked()
     lienhe.setText("<p><b>Nhóm 1, L01, Trường ĐHBK Tp HCM</b></p> <p>Nguyễn Quốc Anh</p> <p>Nguyễn Huỳnh Thoại</p><p>Huỳnh Song Anh Quân</p><p>Nguyễn Thị Như Ý</p>");
     lienhe.setStandardButtons(QMessageBox::Ok);
     lienhe.exec();
+}
+
+void MainWindow::on_pushButton_quydinh_clicked()
+{
+    noiquy quydinh;
+    quydinh.setModal(true);
+    quydinh.exec();
 }

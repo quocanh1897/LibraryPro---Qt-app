@@ -31,7 +31,8 @@ SOURCES += main.cpp\
     mainwindow.cpp \
     user.cpp \
     signin.cpp \
-    workspace.cpp
+    workspace.cpp \
+    noiquy.cpp
 
 HEADERS  += \
     databaseconnection.h \
@@ -42,7 +43,8 @@ HEADERS  += \
     mainwindow.h \
     user.h \
     signin.h \
-    workspace.h
+    workspace.h \
+    noiquy.h
 
 FORMS    += \
     admin.ui \
@@ -52,7 +54,8 @@ FORMS    += \
     mainwindow.ui \
     user.ui \
     signin.ui \
-    workspace.ui
+    workspace.ui \
+    noiquy.ui
 
 RESOURCES += \
     src.qrc

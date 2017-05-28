@@ -52,7 +52,7 @@ public:
     QLabel *lbl;
     QHBoxLayout *horizontalLayout_4;
     QPushButton *pushButton_lienhe;
-    QPushButton *pushButton_4;
+    QPushButton *pushButton_quydinh;
     QPushButton *pushButton_5;
     QPushButton *pushButton_6;
     QSpacerItem *horizontalSpacer;
@@ -186,12 +186,12 @@ public:
 
         horizontalLayout_4->addWidget(pushButton_lienhe);
 
-        pushButton_4 = new QPushButton(layoutWidget);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        sizePolicy.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
-        pushButton_4->setSizePolicy(sizePolicy);
+        pushButton_quydinh = new QPushButton(layoutWidget);
+        pushButton_quydinh->setObjectName(QStringLiteral("pushButton_quydinh"));
+        sizePolicy.setHeightForWidth(pushButton_quydinh->sizePolicy().hasHeightForWidth());
+        pushButton_quydinh->setSizePolicy(sizePolicy);
 
-        horizontalLayout_4->addWidget(pushButton_4);
+        horizontalLayout_4->addWidget(pushButton_quydinh);
 
         pushButton_5 = new QPushButton(layoutWidget);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
@@ -248,7 +248,7 @@ public:
         groupBox_2->setTitle(QApplication::translate("MainWindow", "B\341\272\243ng tin", Q_NULLPTR));
         lbl->setText(QString());
         pushButton_lienhe->setText(QApplication::translate("MainWindow", "Li\303\252n h\341\273\207", Q_NULLPTR));
-        pushButton_4->setText(QApplication::translate("MainWindow", "Quy \304\221\341\273\213nh", Q_NULLPTR));
+        pushButton_quydinh->setText(QApplication::translate("MainWindow", "Quy \304\221\341\273\213nh", Q_NULLPTR));
         pushButton_5->setText(QApplication::translate("MainWindow", "\304\220\304\203ng nh\341\272\255p", Q_NULLPTR));
         pushButton_6->setText(QApplication::translate("MainWindow", "\304\220\304\203ng k\303\255", Q_NULLPTR));
         pushButton_7->setText(QApplication::translate("MainWindow", "Tho\303\241t", Q_NULLPTR));
