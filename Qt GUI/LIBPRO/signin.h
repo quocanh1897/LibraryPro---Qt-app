@@ -1,30 +1,25 @@
 #ifndef SIGNIN_H
 #define SIGNIN_H
-
 #include <QDialog>
-#include <QtSql>
-#include <QtDebug>
-#include <QFileInfo>
-extern bool breader,blibrarian,badmin;
-extern QString accountname;
+#include "mainwindow.h"
 namespace Ui {
-class signin;
+class SignIn;
 }
 
-class signin : public QDialog
+class SignIn : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit signin(QWidget *parent = 0);
-    ~signin();
-
+    explicit SignIn(QWidget *parent = 0);
+    ~SignIn();
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
-    Ui::signin *ui;
-    //QSqlDatabase mydb;
+    Ui::SignIn *ui;
 };
 
 #endif // SIGNIN_H

@@ -1,7 +1,9 @@
 #include "admin.h"
 #include "ui_admin.h"
 #include "databaseconnection.h"
+#include "edituser.h"
 #include <QTableView>
+QString hoten,email,nghenghiep,cmnd,ngaysinh,accountname="";
 admin::admin(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::admin)
@@ -69,5 +71,31 @@ void admin::on_pushButton_5_clicked()
     databaseModel->setQuery(*aqry);
     ui->tableView->setModel(databaseModel);
     ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
     searchDB.closeConnection();
 }
+
+void admin::on_tableView_activated(const QModelIndex &index)
+{
+    QString gtri=ui->tableView->model()->data(index).toString();
+    connectDatabase data;
+    data.openConnection();
+
+    QSqlQuery* qry = new QSqlQuery(data.mydb);
+    qry->prepare("select * from TAIKHOAN as t JOIN NGUOIDUNG as n on t.cmnd=n.cmnd where TAIKHOAN=:giatri or n.HOTEN=:giatri or t.CMND=:giatri;");
+    qry->bindValue(":giatri",gtri);
+    if(qry->exec()){
+        while(qry->next()){
+            cmnd=qry->value(0).toString();
+            hoten=qry->value(6).toString();
+            email=qry->value(7).toString();
+            nghenghiep=qry->value(10).toString();
+            ngaysinh=qry->value(9).toString();
+            editUSER edit;
+            edit.setModal(true);
+            edit.exec();
+        }
+    }
+}
+
+

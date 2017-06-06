@@ -22,7 +22,7 @@
 #include <QtWidgets/QListView>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QTableWidget>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -55,7 +55,7 @@ public:
     QLineEdit *lineEdit;
     QPushButton *pushButton;
     QPushButton *pushButton_3;
-    QTableWidget *tableWidget;
+    QTableView *tableView;
 
     void setupUi(QWidget *reader)
     {
@@ -121,9 +121,8 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(pushButton_6->sizePolicy().hasHeightForWidth());
         pushButton_6->setSizePolicy(sizePolicy1);
-        pushButton_6->setStyleSheet(QStringLiteral("border-image: url(:/cart.png);"));
         QIcon icon1;
-        icon1.addFile(QStringLiteral(":/image/cart.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QStringLiteral(":/images/cart.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_6->setIcon(icon1);
         pushButton_6->setIconSize(QSize(32, 32));
 #ifndef QT_NO_SHORTCUT
@@ -188,7 +187,7 @@ public:
         sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
         pushButton->setSizePolicy(sizePolicy);
         QIcon icon2;
-        icon2.addFile(QStringLiteral(":/image/search-icon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QStringLiteral(":/images/search-icon.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton->setIcon(icon2);
         pushButton->setIconSize(QSize(24, 24));
 
@@ -199,7 +198,7 @@ public:
         sizePolicy.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
         pushButton_3->setSizePolicy(sizePolicy);
         QIcon icon3;
-        icon3.addFile(QStringLiteral(":/image/add.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon3.addFile(QStringLiteral(":/images/add.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_3->setIcon(icon3);
         pushButton_3->setIconSize(QSize(24, 24));
 
@@ -209,10 +208,10 @@ public:
 
         verticalLayout_2->addLayout(horizontalLayout_3);
 
-        tableWidget = new QTableWidget(groupBox_2);
-        tableWidget->setObjectName(QStringLiteral("tableWidget"));
+        tableView = new QTableView(groupBox_2);
+        tableView->setObjectName(QStringLiteral("tableView"));
 
-        verticalLayout_2->addWidget(tableWidget);
+        verticalLayout_2->addWidget(tableView);
 
 
         horizontalLayout_4->addWidget(groupBox_2);
@@ -235,21 +234,36 @@ public:
         pushButton_8->setText(QApplication::translate("reader", "Hoat Dong", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("reader", "Lien He", Q_NULLPTR));
         pushButton_7->setText(QApplication::translate("reader", "Hop thu", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        pushButton_6->setToolTip(QApplication::translate("reader", "Gi\341\273\217 h\303\240ng", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
         pushButton_6->setText(QString());
+#ifndef QT_NO_TOOLTIP
+        label_5->setToolTip(QApplication::translate("reader", "S\341\273\221 l\306\260\341\273\243ng", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
         label_5->setText(QApplication::translate("reader", "TextLabel", Q_NULLPTR));
         groupBox->setTitle(QApplication::translate("reader", "Thong Tin", Q_NULLPTR));
         pushButton_9->setText(QApplication::translate("reader", "Xem chi tiet", Q_NULLPTR));
         groupBox_2->setTitle(QApplication::translate("reader", "Tra cuu sach", Q_NULLPTR));
         comboBox->clear();
         comboBox->insertItems(0, QStringList()
-         << QApplication::translate("reader", "Tat ca", Q_NULLPTR)
-         << QApplication::translate("reader", "Tua de", Q_NULLPTR)
-         << QApplication::translate("reader", "Tac gia", Q_NULLPTR)
-         << QApplication::translate("reader", "Mo ta", Q_NULLPTR)
-         << QApplication::translate("reader", "Nam", Q_NULLPTR)
+         << QApplication::translate("reader", "T\341\272\245t c\341\272\243", Q_NULLPTR)
+         << QApplication::translate("reader", "T\341\273\261a \304\221\341\273\201", Q_NULLPTR)
+         << QApplication::translate("reader", "T\303\241c gi\341\272\243", Q_NULLPTR)
+         << QApplication::translate("reader", "NXB", Q_NULLPTR)
+         << QApplication::translate("reader", "N\304\203m", Q_NULLPTR)
          << QApplication::translate("reader", "ISBN", Q_NULLPTR)
         );
+#ifndef QT_NO_TOOLTIP
+        comboBox->setToolTip(QApplication::translate("reader", "T\303\254m ki\341\272\277m theo", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_TOOLTIP
+        pushButton->setToolTip(QApplication::translate("reader", "T\303\254m ki\341\272\277m", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
         pushButton->setText(QString());
+#ifndef QT_NO_TOOLTIP
+        pushButton_3->setToolTip(QApplication::translate("reader", "Th\303\252m v\303\240o gi\341\273\217 h\303\240ng", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
         pushButton_3->setText(QString());
     } // retranslateUi
 

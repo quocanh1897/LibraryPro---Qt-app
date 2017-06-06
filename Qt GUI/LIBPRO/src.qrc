@@ -1,13 +1,34 @@
 <RCC>
     <qresource prefix="/">
-        <file>sdh.png</file>
-        <file>iconwindow.png</file>
-        <file>cart.png</file>
-        <file>login.png</file>
-        <file>search-icon.png</file>
-        <file>signin1.png</file>
-        <file>signo.png</file>
-        <file>signup.png</file>
-        <file>users.png</file>
+        <file>data/database.sqlite</file>
+        <file>images/add.png</file>
+        <file>images/cart.png</file>
+        <file>images/iconwindow.png</file>
+        <file>images/pen.png</file>
+        <file>images/search-icon.png</file>
+        <file>images/signin1.png</file>
+        <file>images/signo.png</file>
+        <file>images/users.png</file>
+        <file>images/home.ico</file>
+        <file>images/acc.png</file>
+        <file>images/signin.ico</file>
+        <file>images/signout.ico</file>
+        <file>images/signupicon.png</file>
+        <file>images/user.ico</file>
+        <file>images/images.jpg</file>
+        <file>images/Home.png</file>
+        <file>images/images.png</file>
+        <file>images/index.jpg</file>
+        <file>images/Oxygen-Icons.org-Oxygen-Apps-preferences-contact-list.ico</file>
+        <file>images/contactus-icon.png</file>
+        <file>images/25.png</file>
+        <file>images/ucontract.png</file>
+        <file>images/about-us-icon-15.png</file>
+        <file>images/contact-icon.gif</file>
+        <file>images/contact.png</file>
+        <file>images/rule.png</file>
+        <file>images/info.png</file>
+        <file>images/icon-account-dark.png</file>
+        <file>images/iconwindow.ico</file>
     </qresource>
 </RCC>

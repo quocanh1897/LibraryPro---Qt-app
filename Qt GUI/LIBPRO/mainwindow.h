@@ -1,34 +1,37 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include "signupdialog.h"
-#include <QMainWindow>
 
+#include <QMainWindow>
+#include <QString>
+#include "signin.h"
 namespace Ui {
 class MainWindow;
 }
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
-
 public:
+    bool accReader= false,accAdmin = false,accLibrarian=true,accActive = false;
+    QString PIN = "",accName = "";
+    Q_OBJECT
+public:
+    explicit MainWindow(bool admin,bool reader, bool librarian,
+                        QString pin,QString name,QWidget * par = 0);
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
 private slots:
-    void on_pushButton_6_clicked();
+    void on_actionSignUp_triggered();
 
-    void on_pushButton_5_clicked();
+    void on_actionSignIn_triggered();
 
-    void on_pushButton_7_clicked();
+    void on_actionSignOut_triggered();
 
-    void on_pushButton_11_clicked();
+    void on_actionHome_triggered();
 
-    void on_pushButton_muon_clicked();
+    void on_actionabout_triggered();
 
-    void on_pushButton_lienhe_clicked();
-
-    void on_pushButton_quydinh_clicked();
+    void on_actionrule_triggered();
 
 private:
     Ui::MainWindow *ui;

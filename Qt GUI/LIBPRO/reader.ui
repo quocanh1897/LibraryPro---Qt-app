@@ -14,7 +14,7 @@
    <string>LIBPRO</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="src.qrc">
+   <iconset>
     <normaloff>:/iconwindow.png</normaloff>:/iconwindow.png</iconset>
   </property>
   <property name="autoFillBackground">
@@ -109,15 +109,15 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="styleSheet">
-          <string notr="true">border-image: url(:/cart.png);</string>
+         <property name="toolTip">
+          <string>Giỏ hàng</string>
          </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/image/cart.png</normaloff>:/image/cart.png</iconset>
+          <iconset resource="src.qrc">
+           <normaloff>:/images/cart.png</normaloff>:/images/cart.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -135,6 +135,9 @@
        </item>
        <item>
         <widget class="QLabel" name="label_5">
+         <property name="toolTip">
+          <string>Số lượng</string>
+         </property>
          <property name="text">
           <string>TextLabel</string>
          </property>
@@ -181,29 +184,32 @@
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="toolTip">
+             <string>Tìm kiếm theo</string>
+            </property>
             <item>
              <property name="text">
-              <string>Tat ca</string>
+              <string>Tất cả</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>Tua de</string>
+              <string>Tựa đề</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>Tac gia</string>
+              <string>Tác giả</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>Mo ta</string>
+              <string>NXB</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>Nam</string>
+              <string>Năm</string>
              </property>
             </item>
             <item>
@@ -231,12 +237,15 @@
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="toolTip">
+             <string>Tìm kiếm</string>
+            </property>
             <property name="text">
              <string/>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>:/image/search-icon.png</normaloff>:/image/search-icon.png</iconset>
+             <iconset resource="src.qrc">
+              <normaloff>:/images/search-icon.png</normaloff>:/images/search-icon.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -254,12 +263,15 @@
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="toolTip">
+             <string>Thêm vào giỏ hàng</string>
+            </property>
             <property name="text">
              <string/>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>:/image/add.png</normaloff>:/image/add.png</iconset>
+             <iconset resource="src.qrc">
+              <normaloff>:/images/add.png</normaloff>:/images/add.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -272,7 +284,7 @@
          </layout>
         </item>
         <item>
-         <widget class="QTableWidget" name="tableWidget"/>
+         <widget class="QTableView" name="tableView"/>
         </item>
        </layout>
       </widget>

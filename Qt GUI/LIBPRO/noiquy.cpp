@@ -10,6 +10,7 @@ noiquy::noiquy(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(500,420);
+    this->setWindowTitle("Quy định");
     QString filename=QCoreApplication::applicationDirPath()+"/noiquy.txt";
     QFile file(filename);
     if(!file.exists()){
@@ -23,9 +24,13 @@ noiquy::noiquy(QWidget *parent) :
         while (!stream.atEnd()){
             line = stream.readLine();
             ui->plainTextEdit->setPlainText(ui->plainTextEdit->toPlainText()+line+"\n");
+            //ui->label->setText(line);
 
         }
+       // ui->plainTextEdit->setDisabled(true);
+        ui->plainTextEdit->setTextInteractionFlags(Qt::TextSelectableByKeyboard);
     }
+
     file.close();
 
 }

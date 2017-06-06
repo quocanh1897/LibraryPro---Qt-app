@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui sql
-
+RC_FILE = libpro.rc
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = LIBPRO
@@ -27,37 +27,39 @@ SOURCES += main.cpp\
     admin.cpp \
     librarian.cpp \
     reader.cpp \
-    signupdialog.cpp \
     mainwindow.cpp \
-    user.cpp \
+    signup.cpp \
     signin.cpp \
-    workspace.cpp \
-    noiquy.cpp
+    home.cpp \
+    noiquy.cpp \
+    edituser.cpp
 
 HEADERS  += \
     databaseconnection.h \
     admin.h \
     librarian.h \
     reader.h \
-    signupdialog.h \
     mainwindow.h \
-    user.h \
+    signup.h \
     signin.h \
-    workspace.h \
-    noiquy.h
+    home.h \
+    noiquy.h \
+    edituser.h
 
 FORMS    += \
     admin.ui \
     librarian.ui \
     reader.ui \
-    signupdialog.ui \
     mainwindow.ui \
-    user.ui \
+    signup.ui \
     signin.ui \
-    workspace.ui \
-    noiquy.ui
+    home.ui \
+    noiquy.ui \
+    edituser.ui
 
 RESOURCES += \
+    src.qrc \
     src.qrc
 
-DISTFILES +=
+DISTFILES += \
+    images/iconwindow.ico

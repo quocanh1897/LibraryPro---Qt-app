@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>738</width>
+    <width>742</width>
     <height>504</height>
    </rect>
   </property>
@@ -86,7 +86,7 @@
         <item>
          <widget class="QPushButton" name="pushButton_5">
           <property name="text">
-           <string>Tim</string>
+           <string>Tìm</string>
           </property>
          </widget>
         </item>
@@ -102,30 +102,9 @@
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_4">
             <item>
-             <widget class="QPushButton" name="pushButton_8">
+             <widget class="QPushButton" name="pushButton_addaccount">
               <property name="text">
                <string>Thêm</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_6">
-              <property name="text">
-               <string>Chỉnh sửa</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_9">
-              <property name="text">
-               <string>Xoá</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_7">
-              <property name="text">
-               <string>Reset mật khẩu</string>
               </property>
              </widget>
             </item>

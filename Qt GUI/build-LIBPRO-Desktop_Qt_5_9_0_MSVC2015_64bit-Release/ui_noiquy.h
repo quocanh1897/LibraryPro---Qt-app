@@ -27,7 +27,7 @@ QT_BEGIN_NAMESPACE
 class Ui_noiquy
 {
 public:
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QPlainTextEdit *plainTextEdit;
     QHBoxLayout *horizontalLayout;
@@ -40,14 +40,20 @@ public:
         if (noiquy->objectName().isEmpty())
             noiquy->setObjectName(QStringLiteral("noiquy"));
         noiquy->resize(500, 420);
-        widget = new QWidget(noiquy);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(10, 10, 481, 401));
-        verticalLayout = new QVBoxLayout(widget);
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/images/rule.png"), QSize(), QIcon::Normal, QIcon::Off);
+        noiquy->setWindowIcon(icon);
+        layoutWidget = new QWidget(noiquy);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(10, 10, 481, 401));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        plainTextEdit = new QPlainTextEdit(widget);
+        plainTextEdit = new QPlainTextEdit(layoutWidget);
         plainTextEdit->setObjectName(QStringLiteral("plainTextEdit"));
+        plainTextEdit->viewport()->setProperty("cursor", QVariant(QCursor(Qt::PointingHandCursor)));
+        plainTextEdit->setAcceptDrops(true);
+        plainTextEdit->setReadOnly(true);
 
         verticalLayout->addWidget(plainTextEdit);
 
@@ -57,7 +63,7 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer);
 
-        pushButton = new QPushButton(widget);
+        pushButton = new QPushButton(layoutWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
 
         horizontalLayout->addWidget(pushButton);

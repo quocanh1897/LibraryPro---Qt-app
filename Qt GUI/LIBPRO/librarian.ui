@@ -88,7 +88,7 @@
            <widget class="QComboBox" name="comboBox_2">
             <item>
              <property name="text">
-              <string>Tat ca</string>
+              <string>Tất cả</string>
              </property>
             </item>
             <item>
@@ -98,12 +98,12 @@
             </item>
             <item>
              <property name="text">
-              <string>Tua de</string>
+              <string>Tựa đề</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>Tac gia</string>
+              <string>Tác giả</string>
              </property>
             </item>
             <item>
@@ -113,21 +113,7 @@
             </item>
             <item>
              <property name="text">
-              <string>Nam</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item>
-           <widget class="QComboBox" name="comboBox">
-            <item>
-             <property name="text">
-              <string>Chinh xac</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Gan giong</string>
+              <string>Năm</string>
              </property>
             </item>
            </widget>
@@ -147,7 +133,7 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
-           <widget class="QTableView" name="tableView_1"/>
+           <widget class="QTableView" name="tableView"/>
           </item>
           <item>
            <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1,1,1,2">

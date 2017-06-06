@@ -45,10 +45,7 @@ public:
     QHBoxLayout *horizontalLayout_4;
     QTableView *tableView;
     QVBoxLayout *verticalLayout_4;
-    QPushButton *pushButton_8;
-    QPushButton *pushButton_6;
-    QPushButton *pushButton_9;
-    QPushButton *pushButton_7;
+    QPushButton *pushButton_addaccount;
     QSpacerItem *verticalSpacer_3;
     QGroupBox *groupBox;
     QVBoxLayout *verticalLayout_3;
@@ -66,7 +63,7 @@ public:
     {
         if (admin->objectName().isEmpty())
             admin->setObjectName(QStringLiteral("admin"));
-        admin->resize(738, 504);
+        admin->resize(742, 504);
         admin->setAutoFillBackground(true);
         verticalLayout_7 = new QVBoxLayout(admin);
         verticalLayout_7->setObjectName(QStringLiteral("verticalLayout_7"));
@@ -127,25 +124,10 @@ public:
 
         verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        pushButton_8 = new QPushButton(groupBox_2);
-        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
+        pushButton_addaccount = new QPushButton(groupBox_2);
+        pushButton_addaccount->setObjectName(QStringLiteral("pushButton_addaccount"));
 
-        verticalLayout_4->addWidget(pushButton_8);
-
-        pushButton_6 = new QPushButton(groupBox_2);
-        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-
-        verticalLayout_4->addWidget(pushButton_6);
-
-        pushButton_9 = new QPushButton(groupBox_2);
-        pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
-
-        verticalLayout_4->addWidget(pushButton_9);
-
-        pushButton_7 = new QPushButton(groupBox_2);
-        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
-
-        verticalLayout_4->addWidget(pushButton_7);
+        verticalLayout_4->addWidget(pushButton_addaccount);
 
         verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
@@ -233,11 +215,8 @@ public:
          << QApplication::translate("admin", "CMND/MSSV", Q_NULLPTR)
          << QApplication::translate("admin", "Vai tr\303\262", Q_NULLPTR)
         );
-        pushButton_5->setText(QApplication::translate("admin", "Tim", Q_NULLPTR));
-        pushButton_8->setText(QApplication::translate("admin", "Th\303\252m", Q_NULLPTR));
-        pushButton_6->setText(QApplication::translate("admin", "Ch\341\273\211nh s\341\273\255a", Q_NULLPTR));
-        pushButton_9->setText(QApplication::translate("admin", "Xo\303\241", Q_NULLPTR));
-        pushButton_7->setText(QApplication::translate("admin", "Reset m\341\272\255t kh\341\272\251u", Q_NULLPTR));
+        pushButton_5->setText(QApplication::translate("admin", "T\303\254m", Q_NULLPTR));
+        pushButton_addaccount->setText(QApplication::translate("admin", "Th\303\252m", Q_NULLPTR));
         groupBox->setTitle(QApplication::translate("admin", "T\303\241c v\341\273\245", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("admin", "Th\303\252m", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("admin", "Ch\341\273\211nh s\341\273\255a", Q_NULLPTR));

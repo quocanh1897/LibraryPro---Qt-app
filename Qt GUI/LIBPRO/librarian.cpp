@@ -1,6 +1,7 @@
 #include "librarian.h"
 #include "ui_librarian.h"
 #include "databaseconnection.h"
+
 librarian::librarian(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::librarian)
@@ -18,65 +19,67 @@ void librarian::on_pushButton_5_clicked()
     connectDatabase searchDB;
 
         if(!searchDB.openConnection()){
-            QMessageBox::critical(this,"Database Error!","Error Connecting to Database! Please try again or Check Database.");
+            QMessageBox::critical(this,"Lỗi kết nối!","Không kết nối được cơ sở dữ liệu, liên hệ admin.");
         }
 
         searchDB.openConnection();
 
         QSqlQueryModel* databaseModel = new QSqlQueryModel;
 
-        QSqlQuery* databaseQuery = new QSqlQuery(searchDB.mydb);
+        QSqlQuery* aqry = new QSqlQuery(searchDB.mydb);
 
 
         if(ui->comboBox_2->currentText() == "ISBN"){
 
-            databaseQuery->prepare("select Title, isbn from SACH where ISBN like '%'||:isbn||'%';");
-            databaseQuery->bindValue(":isbn",ui->lineEdit->text().toInt());
-            databaseQuery->exec();
+            aqry->prepare("select * from SACH where ISBN like '%'||:isbn||'%';");
+            aqry->bindValue(":isbn",ui->lineEdit->text().toInt());
+            aqry->exec();
         }
 
 
-        else if(ui->comboBox_2->currentText() == "Tua de"){
+        else if(ui->comboBox_2->currentText() == "Tựa đề"){
 
-            databaseQuery->prepare("select title,author from SACH where Title like '%'||:name||'%';");
-            databaseQuery->bindValue(":name",ui->lineEdit->text());
-            databaseQuery->exec();
+            aqry->prepare("select * from SACH where TUADE like '%'||:name||'%';");
+            aqry->bindValue(":name",ui->lineEdit->text());
+            aqry->exec();
         }
 
 
-        else if(ui->comboBox_2->currentText() == "Tac gia"){
+        else if(ui->comboBox_2->currentText() == "Tác giả"){
 
-            databaseQuery->prepare("select title,author from SACH where Author like '%'||:author||'%';");
-            databaseQuery->bindValue(":author",ui->lineEdit->text());
-            databaseQuery->exec();
+            aqry->prepare("select * from SACH where TACGIA like '%'||:author||'%';");
+            aqry->bindValue(":author",ui->lineEdit->text());
+            aqry->exec();
         }
 
 
-        else if(ui->comboBox_2->currentText() == "Nam"){
+        else if(ui->comboBox_2->currentText() == "Năm"){
 
 
-            databaseQuery->prepare("select title,year from SACH where year = :year;");
-            databaseQuery->bindValue(":year",ui->lineEdit->text().toInt());
-            databaseQuery->exec();
+            aqry->prepare("select * from SACH where NAM = :year;");
+            aqry->bindValue(":year",ui->lineEdit->text().toInt());
+            aqry->exec();
         }
 
 
         else if(ui->comboBox_2->currentText() == "NXB"){
 
-            databaseQuery->prepare("select title,publisher from SACH where publisher like '%'||:nxb||'%';");
-            databaseQuery->bindValue(":nxb",ui->lineEdit->text());
-            databaseQuery->exec();
+            aqry->prepare("select * from SACH where NHAXUATBAN like '%'||:nxb||'%';");
+            aqry->bindValue(":nxb",ui->lineEdit->text());
+            aqry->exec();
         }
 
 
-        else if(ui->comboBox_2->currentText() == "Tat ca"){
+        else if(ui->comboBox_2->currentText() == "Tất cả"){
 
-            databaseQuery->exec("select title,author from SACH;");
+            aqry->exec("select * from SACH;");
         }
 
 
-        databaseModel->setQuery(*databaseQuery);
-        ui->tableView_1->setModel(databaseModel);
-        ui->tableView_1->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+        databaseModel->setQuery(*aqry);
+        ui->tableView->setModel(databaseModel);
+        ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+        //QModelIndexList ids = ui->tableView->selectionModel()->selectedRows();
+        //ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         searchDB.closeConnection();
 }

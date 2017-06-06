@@ -45,11 +45,10 @@ public:
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout;
     QComboBox *comboBox_2;
-    QComboBox *comboBox;
     QLineEdit *lineEdit;
     QPushButton *pushButton_5;
     QHBoxLayout *horizontalLayout_2;
-    QTableView *tableView_1;
+    QTableView *tableView;
     QVBoxLayout *verticalLayout;
     QSpacerItem *verticalSpacer_2;
     QPushButton *pushButton_6;
@@ -119,11 +118,6 @@ public:
 
         horizontalLayout->addWidget(comboBox_2);
 
-        comboBox = new QComboBox(groupBox);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
-
-        horizontalLayout->addWidget(comboBox);
-
         lineEdit = new QLineEdit(groupBox);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
 
@@ -139,10 +133,10 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        tableView_1 = new QTableView(groupBox);
-        tableView_1->setObjectName(QStringLiteral("tableView_1"));
+        tableView = new QTableView(groupBox);
+        tableView->setObjectName(QStringLiteral("tableView"));
 
-        horizontalLayout_2->addWidget(tableView_1);
+        horizontalLayout_2->addWidget(tableView);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
@@ -204,17 +198,12 @@ public:
         groupBox->setTitle(QApplication::translate("librarian", "Quan Li Sach", Q_NULLPTR));
         comboBox_2->clear();
         comboBox_2->insertItems(0, QStringList()
-         << QApplication::translate("librarian", "Tat ca", Q_NULLPTR)
+         << QApplication::translate("librarian", "T\341\272\245t c\341\272\243", Q_NULLPTR)
          << QApplication::translate("librarian", "ISBN", Q_NULLPTR)
-         << QApplication::translate("librarian", "Tua de", Q_NULLPTR)
-         << QApplication::translate("librarian", "Tac gia", Q_NULLPTR)
+         << QApplication::translate("librarian", "T\341\273\261a \304\221\341\273\201", Q_NULLPTR)
+         << QApplication::translate("librarian", "T\303\241c gi\341\272\243", Q_NULLPTR)
          << QApplication::translate("librarian", "NXB", Q_NULLPTR)
-         << QApplication::translate("librarian", "Nam", Q_NULLPTR)
-        );
-        comboBox->clear();
-        comboBox->insertItems(0, QStringList()
-         << QApplication::translate("librarian", "Chinh xac", Q_NULLPTR)
-         << QApplication::translate("librarian", "Gan giong", Q_NULLPTR)
+         << QApplication::translate("librarian", "N\304\203m", Q_NULLPTR)
         );
         pushButton_5->setText(QApplication::translate("librarian", "Tim Kiem", Q_NULLPTR));
         pushButton_6->setText(QApplication::translate("librarian", "Them vao", Q_NULLPTR));

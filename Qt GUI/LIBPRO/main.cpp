@@ -1,10 +1,13 @@
 #include "mainwindow.h"
 #include <QApplication>
+
 int main(int argc, char *argv[])
 {
+
+    //QWidget::setWindowIcon(QIcon::addFile(":/images/iconwindow.ico"));
     QApplication a(argc, argv);
-    MainWindow w;
-    w.setWindowTitle("LIBPRO");
-    w.show();
+    MainWindow *m = new MainWindow();
+    m->setWindowTitle("LIBPRO");
+    m->show();
     return a.exec();
 }
