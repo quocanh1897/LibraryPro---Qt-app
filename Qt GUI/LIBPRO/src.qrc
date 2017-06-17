@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>data/database.sqlite</file>
         <file>images/add.png</file>
         <file>images/cart.png</file>
         <file>images/iconwindow.png</file>
@@ -30,5 +29,29 @@
         <file>images/info.png</file>
         <file>images/icon-account-dark.png</file>
         <file>images/iconwindow.ico</file>
+        <file>images/lock.png</file>
+        <file>images/reset.png</file>
+        <file>images/reset2.png</file>
+        <file>images/update.png</file>
+        <file>images/update2.png</file>
+        <file>images/update3.ico</file>
+        <file>images/icon-select.png</file>
+        <file>images/select_code-512.png</file>
+        <file>images/reset22.png</file>
+        <file>images/b.png</file>
+        <file>images/del.png</file>
+        <file>images/del2.png</file>
+        <file>images/del3.png</file>
+        <file>images/button_cancel.png</file>
+        <file>images/copy_icon.png</file>
+        <file>images/floppy-disk.png</file>
+        <file>images/Button-Close-icon.png</file>
+        <file>images/database-remove-icon.png</file>
+        <file>images/Misc-New-Database-icon.png</file>
+        <file>images/Pencil-icon.png</file>
+        <file>images/52-128.png</file>
+        <file>images/notice.png</file>
+        <file>images/m.png</file>
+        <file>images/mail.png</file>
     </qresource>
 </RCC>

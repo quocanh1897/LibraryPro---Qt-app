@@ -5,11 +5,11 @@
 #-------------------------------------------------
 
 QT       += core gui sql
-RC_FILE = libpro.rc
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = LIBPRO
 TEMPLATE = app
+RC_FILE = libpro.rc
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked as deprecated (the exact warnings
@@ -32,7 +32,14 @@ SOURCES += main.cpp\
     signin.cpp \
     home.cpp \
     noiquy.cpp \
-    edituser.cpp
+    edituser.cpp \
+    forgetpass.cpp \
+    addbook.cpp \
+    encrypt.cpp \
+    notice.cpp \
+    cart.cpp \
+    mailbox.cpp \
+    contact.cpp
 
 HEADERS  += \
     databaseconnection.h \
@@ -44,7 +51,14 @@ HEADERS  += \
     signin.h \
     home.h \
     noiquy.h \
-    edituser.h
+    edituser.h \
+    forgetpass.h \
+    addbook.h \
+    encrypt.h \
+    notice.h \
+    cart.h \
+    mailbox.h \
+    contact.h
 
 FORMS    += \
     admin.ui \
@@ -55,11 +69,24 @@ FORMS    += \
     signin.ui \
     home.ui \
     noiquy.ui \
-    edituser.ui
+    edituser.ui \
+    forgetpass.ui \
+    addbook.ui \
+    notice.ui \
+    cart.ui \
+    mailbox.ui \
+    contact.ui
 
 RESOURCES += \
-    src.qrc \
+    src.qrc\
     src.qrc
 
 DISTFILES += \
-    images/iconwindow.ico
+    images/iconwindow.ico \
+    images/del.png \
+    images/lock.png \
+    images/reset.png \
+    images/update.png \
+    images/update2.png \
+    images/update3.ico \
+    images/reset2.png

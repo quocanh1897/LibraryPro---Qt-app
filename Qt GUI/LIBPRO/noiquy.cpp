@@ -24,10 +24,9 @@ noiquy::noiquy(QWidget *parent) :
         while (!stream.atEnd()){
             line = stream.readLine();
             ui->plainTextEdit->setPlainText(ui->plainTextEdit->toPlainText()+line+"\n");
-            //ui->label->setText(line);
+
 
         }
-       // ui->plainTextEdit->setDisabled(true);
         ui->plainTextEdit->setTextInteractionFlags(Qt::TextSelectableByKeyboard);
     }
 

@@ -33,6 +33,14 @@ private slots:
 
     void on_actionrule_triggered();
 
+    void on_actionUser_triggered();
+
+    void on_actionNotice_triggered();
+
+    void on_actionMail_triggered();
+
+    void on_actioncontact_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

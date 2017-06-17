@@ -13,6 +13,7 @@ class SignUpDialog : public QDialog
 
 public:
     explicit SignUpDialog(QWidget *parent = 0);
+    explicit SignUpDialog(bool adduser);
     ~SignUpDialog();
 
 private slots:

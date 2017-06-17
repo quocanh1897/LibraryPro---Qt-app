@@ -1,3 +1,4 @@
+#include "databaseconnection.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "signup.h"
@@ -9,10 +10,14 @@
 #include "ui_home.h"
 #include "home.h"
 #include "librarian.h"
+#include "edituser.h"
 #include "noiquy.h"
+#include "notice.h"
+#include "mailbox.h"
+#include "contact.h"
 #include <QVBoxLayout>
 #include <QMessageBox>
-
+#include <QSql>
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -28,19 +33,27 @@ MainWindow::MainWindow(QWidget *parent) :
     p->setLayout(layout);
     setCentralWidget(p);
 }
-MainWindow::MainWindow(bool badmin,bool breader, bool blibrarian, QString pin,QString name,QWidget * par) :QMainWindow(par),
-    ui(new Ui::MainWindow) {
+MainWindow::MainWindow(bool badmin,bool breader, bool blibrarian, QString pin,QString name,QWidget * par) :
+    QMainWindow(par),
+    ui(new Ui::MainWindow)
+{
     ui->setupUi(this);
     ui->toolBar_2->close();
 
     accReader = breader;accAdmin = badmin;accLibrarian = blibrarian;
     PIN = pin;accName = name;
-    if(accReader)
-        ui->tabWidget->addTab(new reader(),QString("Độc giả"));
-    if(accAdmin)
-        ui->tabWidget->addTab(new admin(),QString("Quản lý"));
-    if(accLibrarian)
-        ui->tabWidget->addTab(new librarian(),QString("Thủ thư"));
+    if(accReader){
+        reader *rea = new reader(accName);
+        ui->tabWidget->addTab(rea,QString("Độc giả"));
+    }
+    if(accLibrarian){
+        librarian *lib = new librarian();
+        ui->tabWidget->addTab(lib,QString("Thủ thư"));
+    }
+    if(accAdmin){
+        admin *ad = new admin();
+        ui->tabWidget->addTab(ad,QString("Quản lý"));
+    }
 }
 
 MainWindow::~MainWindow()
@@ -89,4 +102,46 @@ void MainWindow::on_actionrule_triggered()
     noiquy nquy;
     nquy.setModal(true);
     nquy.exec();
+}
+
+void MainWindow::on_actionUser_triggered()
+{
+    editUSER *pro = new editUSER(accName);
+    pro->setModal(true);
+    pro->exec();
+}
+
+void MainWindow::on_actionNotice_triggered()
+{
+    connectDatabase data;
+    data.openConnection();
+    QSqlQuery qry1;
+    qry1.exec("select THUTHU,QUANLY from TAIKHOAN where TAIKHOAN='"+proname+"'");
+    qry1.next();
+    if(qry1.value(0).toBool()==0&&qry1.value(1).toBool()==0){
+        notice *tbreader = new notice(true);
+        tbreader->setModal(true);
+        tbreader->exec();
+    }
+    else{
+        notice tb;
+        tb.setModal(true);
+        tb.exec();
+    }
+    data.closeConnection();
+
+}
+
+void MainWindow::on_actionMail_triggered()
+{
+    MailBox mail(proname);
+    mail.setModal(true);
+    mail.exec();
+}
+
+void MainWindow::on_actioncontact_triggered()
+{
+    contact lienhe;
+    lienhe.setModal(true);
+    lienhe.exec();
 }

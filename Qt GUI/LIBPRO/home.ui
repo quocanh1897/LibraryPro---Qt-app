@@ -63,7 +63,7 @@
          </layout>
         </item>
         <item>
-         <widget class="QListView" name="listView"/>
+         <widget class="QTableView" name="tableView_thongbao"/>
         </item>
        </layout>
       </widget>

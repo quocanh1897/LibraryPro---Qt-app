@@ -21,7 +21,6 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTableView>
-#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -48,15 +47,11 @@ public:
     QPushButton *pushButton_addaccount;
     QSpacerItem *verticalSpacer_3;
     QGroupBox *groupBox;
-    QVBoxLayout *verticalLayout_3;
-    QVBoxLayout *verticalLayout_2;
-    QHBoxLayout *horizontalLayout;
     QHBoxLayout *horizontalLayout_2;
-    QTableWidget *tableWidget;
+    QHBoxLayout *horizontalLayout;
+    QTableView *tableView_tacvu;
     QVBoxLayout *verticalLayout;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
+    QPushButton *pushButton;
     QSpacerItem *verticalSpacer;
 
     void setupUi(QWidget *admin)
@@ -104,6 +99,10 @@ public:
 
         pushButton_5 = new QPushButton(groupBox_2);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/images/search-icon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_5->setIcon(icon);
+        pushButton_5->setIconSize(QSize(24, 24));
 
         horizontalLayout_3->addWidget(pushButton_5);
 
@@ -126,6 +125,10 @@ public:
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
         pushButton_addaccount = new QPushButton(groupBox_2);
         pushButton_addaccount->setObjectName(QStringLiteral("pushButton_addaccount"));
+        QIcon icon1;
+        icon1.addFile(QStringLiteral(":/images/signupicon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_addaccount->setIcon(icon1);
+        pushButton_addaccount->setIconSize(QSize(30, 30));
 
         verticalLayout_4->addWidget(pushButton_addaccount);
 
@@ -147,51 +150,35 @@ public:
 
         groupBox = new QGroupBox(admin);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        verticalLayout_3 = new QVBoxLayout(groupBox);
-        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        horizontalLayout_2 = new QHBoxLayout(groupBox);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
 
-        verticalLayout_2->addLayout(horizontalLayout);
+        horizontalLayout_2->addLayout(horizontalLayout);
 
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        tableWidget = new QTableWidget(groupBox);
-        tableWidget->setObjectName(QStringLiteral("tableWidget"));
+        tableView_tacvu = new QTableView(groupBox);
+        tableView_tacvu->setObjectName(QStringLiteral("tableView_tacvu"));
 
-        horizontalLayout_2->addWidget(tableWidget);
+        horizontalLayout_2->addWidget(tableView_tacvu);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        pushButton_2 = new QPushButton(groupBox);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton = new QPushButton(groupBox);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        QIcon icon2;
+        icon2.addFile(QStringLiteral(":/images/update.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton->setIcon(icon2);
+        pushButton->setIconSize(QSize(30, 30));
 
-        verticalLayout->addWidget(pushButton_2);
+        verticalLayout->addWidget(pushButton);
 
-        pushButton_3 = new QPushButton(groupBox);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-
-        verticalLayout->addWidget(pushButton_3);
-
-        pushButton_4 = new QPushButton(groupBox);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-
-        verticalLayout->addWidget(pushButton_4);
-
-        verticalSpacer = new QSpacerItem(17, 21, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout->addItem(verticalSpacer);
 
 
         horizontalLayout_2->addLayout(verticalLayout);
-
-
-        verticalLayout_2->addLayout(horizontalLayout_2);
-
-
-        verticalLayout_3->addLayout(verticalLayout_2);
 
 
         verticalLayout_7->addWidget(groupBox);
@@ -215,12 +202,22 @@ public:
          << QApplication::translate("admin", "CMND/MSSV", Q_NULLPTR)
          << QApplication::translate("admin", "Vai tr\303\262", Q_NULLPTR)
         );
-        pushButton_5->setText(QApplication::translate("admin", "T\303\254m", Q_NULLPTR));
-        pushButton_addaccount->setText(QApplication::translate("admin", "Th\303\252m", Q_NULLPTR));
+        pushButton_5->setText(QString());
+#ifndef QT_NO_TOOLTIP
+        pushButton_addaccount->setToolTip(QApplication::translate("admin", "Th\303\252m", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_STATUSTIP
+        pushButton_addaccount->setStatusTip(QApplication::translate("admin", "Th\303\252m t\303\240i kho\341\272\243n m\341\273\233i", Q_NULLPTR));
+#endif // QT_NO_STATUSTIP
+        pushButton_addaccount->setText(QString());
         groupBox->setTitle(QApplication::translate("admin", "T\303\241c v\341\273\245", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("admin", "Th\303\252m", Q_NULLPTR));
-        pushButton_3->setText(QApplication::translate("admin", "Ch\341\273\211nh s\341\273\255a", Q_NULLPTR));
-        pushButton_4->setText(QApplication::translate("admin", "Xo\303\241", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        pushButton->setToolTip(QApplication::translate("admin", "Refresh", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_STATUSTIP
+        pushButton->setStatusTip(QApplication::translate("admin", "L\303\240m m\341\273\233i danh s\303\241ch", Q_NULLPTR));
+#endif // QT_NO_STATUSTIP
+        pushButton->setText(QString());
     } // retranslateUi
 
 };

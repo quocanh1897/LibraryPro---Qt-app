@@ -15,12 +15,12 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpacerItem>
@@ -34,24 +34,28 @@ class Ui_SignUpDialog
 {
 public:
     QWidget *widget;
-    QVBoxLayout *verticalLayout;
+    QVBoxLayout *verticalLayout_4;
     QGroupBox *groupBox;
-    QGridLayout *gridLayout;
-    QHBoxLayout *horizontalLayout_4;
-    QRadioButton *radioButton_male;
-    QRadioButton *radioButton_female;
-    QRadioButton *radioButton_others;
-    QLineEdit *lineEdit_confirm;
-    QLineEdit *lineEdit_id;
-    QLabel *label_3;
+    QVBoxLayout *verticalLayout_3;
+    QHBoxLayout *horizontalLayout_5;
+    QVBoxLayout *verticalLayout_2;
     QLabel *label;
-    QLineEdit *lineEdit_account;
     QLabel *label_2;
-    QLabel *label_7;
-    QLineEdit *lineEdit_pass;
+    QLabel *label_3;
+    QLabel *label_8;
     QLabel *label_4;
+    QLabel *label_6;
     QLabel *label_5;
+    QLabel *label_7;
+    QLabel *label_14;
+    QLabel *label_9;
+    QVBoxLayout *verticalLayout;
+    QLineEdit *lineEdit_account;
+    QLineEdit *lineEdit_id;
+    QLineEdit *lineEdit_pass;
+    QLineEdit *lineEdit_confirm;
     QLineEdit *lineEdit_email;
+    QLineEdit *lineEdit_username;
     QHBoxLayout *horizontalLayout;
     QLabel *label_11;
     QSpinBox *spinBox_d;
@@ -60,15 +64,16 @@ public:
     QLabel *label_13;
     QSpinBox *spinBox_y;
     QLineEdit *lineEdit_job;
+    QHBoxLayout *horizontalLayout_4;
+    QRadioButton *radioButton_male;
+    QRadioButton *radioButton_female;
+    QRadioButton *radioButton_others;
     QHBoxLayout *horizontalLayout_2;
     QCheckBox *checkBox_reader;
     QCheckBox *checkBox_librarian;
     QCheckBox *checkBox_admin;
-    QLabel *label_8;
-    QLabel *label_14;
-    QLabel *label_9;
-    QLabel *label_6;
-    QLineEdit *lineEdit_username;
+    QPlainTextEdit *plainTextEdit_2;
+    QCheckBox *read;
     QHBoxLayout *horizontalLayout_3;
     QSpacerItem *horizontalSpacer;
     QPushButton *pushButton_2;
@@ -79,97 +84,111 @@ public:
     {
         if (SignUpDialog->objectName().isEmpty())
             SignUpDialog->setObjectName(QStringLiteral("SignUpDialog"));
-        SignUpDialog->resize(437, 346);
+        SignUpDialog->resize(435, 558);
         QIcon icon;
         icon.addFile(QStringLiteral(":/images/signupicon.png"), QSize(), QIcon::Normal, QIcon::Off);
         SignUpDialog->setWindowIcon(icon);
         widget = new QWidget(SignUpDialog);
         widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(11, 6, 421, 331));
-        verticalLayout = new QVBoxLayout(widget);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        widget->setGeometry(QRect(2, 1, 421, 554));
+        verticalLayout_4 = new QVBoxLayout(widget);
+        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
+        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
         groupBox = new QGroupBox(widget);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        gridLayout = new QGridLayout(groupBox);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        horizontalLayout_4 = new QHBoxLayout();
-        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        radioButton_male = new QRadioButton(groupBox);
-        radioButton_male->setObjectName(QStringLiteral("radioButton_male"));
-
-        horizontalLayout_4->addWidget(radioButton_male);
-
-        radioButton_female = new QRadioButton(groupBox);
-        radioButton_female->setObjectName(QStringLiteral("radioButton_female"));
-
-        horizontalLayout_4->addWidget(radioButton_female);
-
-        radioButton_others = new QRadioButton(groupBox);
-        radioButton_others->setObjectName(QStringLiteral("radioButton_others"));
-
-        horizontalLayout_4->addWidget(radioButton_others);
-
-
-        gridLayout->addLayout(horizontalLayout_4, 10, 2, 1, 1);
-
-        lineEdit_confirm = new QLineEdit(groupBox);
-        lineEdit_confirm->setObjectName(QStringLiteral("lineEdit_confirm"));
-        lineEdit_confirm->setEchoMode(QLineEdit::Password);
-
-        gridLayout->addWidget(lineEdit_confirm, 3, 2, 1, 1);
-
-        lineEdit_id = new QLineEdit(groupBox);
-        lineEdit_id->setObjectName(QStringLiteral("lineEdit_id"));
-
-        gridLayout->addWidget(lineEdit_id, 1, 2, 1, 1);
-
-        label_3 = new QLabel(groupBox);
-        label_3->setObjectName(QStringLiteral("label_3"));
-
-        gridLayout->addWidget(label_3, 2, 0, 1, 1);
-
+        verticalLayout_3 = new QVBoxLayout(groupBox);
+        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         label = new QLabel(groupBox);
         label->setObjectName(QStringLiteral("label"));
 
-        gridLayout->addWidget(label, 0, 0, 1, 1);
-
-        lineEdit_account = new QLineEdit(groupBox);
-        lineEdit_account->setObjectName(QStringLiteral("lineEdit_account"));
-
-        gridLayout->addWidget(lineEdit_account, 0, 2, 1, 1);
+        verticalLayout_2->addWidget(label);
 
         label_2 = new QLabel(groupBox);
         label_2->setObjectName(QStringLiteral("label_2"));
 
-        gridLayout->addWidget(label_2, 1, 0, 1, 1);
+        verticalLayout_2->addWidget(label_2);
+
+        label_3 = new QLabel(groupBox);
+        label_3->setObjectName(QStringLiteral("label_3"));
+
+        verticalLayout_2->addWidget(label_3);
+
+        label_8 = new QLabel(groupBox);
+        label_8->setObjectName(QStringLiteral("label_8"));
+
+        verticalLayout_2->addWidget(label_8);
+
+        label_4 = new QLabel(groupBox);
+        label_4->setObjectName(QStringLiteral("label_4"));
+
+        verticalLayout_2->addWidget(label_4);
+
+        label_6 = new QLabel(groupBox);
+        label_6->setObjectName(QStringLiteral("label_6"));
+
+        verticalLayout_2->addWidget(label_6);
+
+        label_5 = new QLabel(groupBox);
+        label_5->setObjectName(QStringLiteral("label_5"));
+
+        verticalLayout_2->addWidget(label_5);
 
         label_7 = new QLabel(groupBox);
         label_7->setObjectName(QStringLiteral("label_7"));
 
-        gridLayout->addWidget(label_7, 8, 0, 1, 1);
+        verticalLayout_2->addWidget(label_7);
+
+        label_14 = new QLabel(groupBox);
+        label_14->setObjectName(QStringLiteral("label_14"));
+
+        verticalLayout_2->addWidget(label_14);
+
+        label_9 = new QLabel(groupBox);
+        label_9->setObjectName(QStringLiteral("label_9"));
+
+        verticalLayout_2->addWidget(label_9);
+
+
+        horizontalLayout_5->addLayout(verticalLayout_2);
+
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        lineEdit_account = new QLineEdit(groupBox);
+        lineEdit_account->setObjectName(QStringLiteral("lineEdit_account"));
+
+        verticalLayout->addWidget(lineEdit_account);
+
+        lineEdit_id = new QLineEdit(groupBox);
+        lineEdit_id->setObjectName(QStringLiteral("lineEdit_id"));
+
+        verticalLayout->addWidget(lineEdit_id);
 
         lineEdit_pass = new QLineEdit(groupBox);
         lineEdit_pass->setObjectName(QStringLiteral("lineEdit_pass"));
         lineEdit_pass->setEchoMode(QLineEdit::Password);
         lineEdit_pass->setReadOnly(false);
 
-        gridLayout->addWidget(lineEdit_pass, 2, 2, 1, 1);
+        verticalLayout->addWidget(lineEdit_pass);
 
-        label_4 = new QLabel(groupBox);
-        label_4->setObjectName(QStringLiteral("label_4"));
+        lineEdit_confirm = new QLineEdit(groupBox);
+        lineEdit_confirm->setObjectName(QStringLiteral("lineEdit_confirm"));
+        lineEdit_confirm->setEchoMode(QLineEdit::Password);
 
-        gridLayout->addWidget(label_4, 4, 0, 1, 1);
-
-        label_5 = new QLabel(groupBox);
-        label_5->setObjectName(QStringLiteral("label_5"));
-
-        gridLayout->addWidget(label_5, 6, 0, 1, 1);
+        verticalLayout->addWidget(lineEdit_confirm);
 
         lineEdit_email = new QLineEdit(groupBox);
         lineEdit_email->setObjectName(QStringLiteral("lineEdit_email"));
 
-        gridLayout->addWidget(lineEdit_email, 4, 2, 1, 1);
+        verticalLayout->addWidget(lineEdit_email);
+
+        lineEdit_username = new QLineEdit(groupBox);
+        lineEdit_username->setObjectName(QStringLiteral("lineEdit_username"));
+
+        verticalLayout->addWidget(lineEdit_username);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
@@ -219,12 +238,32 @@ public:
         horizontalLayout->setStretch(3, 1);
         horizontalLayout->setStretch(5, 1);
 
-        gridLayout->addLayout(horizontalLayout, 6, 2, 1, 1);
+        verticalLayout->addLayout(horizontalLayout);
 
         lineEdit_job = new QLineEdit(groupBox);
         lineEdit_job->setObjectName(QStringLiteral("lineEdit_job"));
 
-        gridLayout->addWidget(lineEdit_job, 8, 2, 1, 1);
+        verticalLayout->addWidget(lineEdit_job);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
+        radioButton_male = new QRadioButton(groupBox);
+        radioButton_male->setObjectName(QStringLiteral("radioButton_male"));
+
+        horizontalLayout_4->addWidget(radioButton_male);
+
+        radioButton_female = new QRadioButton(groupBox);
+        radioButton_female->setObjectName(QStringLiteral("radioButton_female"));
+
+        horizontalLayout_4->addWidget(radioButton_female);
+
+        radioButton_others = new QRadioButton(groupBox);
+        radioButton_others->setObjectName(QStringLiteral("radioButton_others"));
+
+        horizontalLayout_4->addWidget(radioButton_others);
+
+
+        verticalLayout->addLayout(horizontalLayout_4);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
@@ -246,35 +285,26 @@ public:
         horizontalLayout_2->addWidget(checkBox_admin);
 
 
-        gridLayout->addLayout(horizontalLayout_2, 11, 2, 1, 1);
-
-        label_8 = new QLabel(groupBox);
-        label_8->setObjectName(QStringLiteral("label_8"));
-
-        gridLayout->addWidget(label_8, 3, 0, 1, 1);
-
-        label_14 = new QLabel(groupBox);
-        label_14->setObjectName(QStringLiteral("label_14"));
-
-        gridLayout->addWidget(label_14, 10, 0, 1, 1);
-
-        label_9 = new QLabel(groupBox);
-        label_9->setObjectName(QStringLiteral("label_9"));
-
-        gridLayout->addWidget(label_9, 11, 0, 1, 1);
-
-        label_6 = new QLabel(groupBox);
-        label_6->setObjectName(QStringLiteral("label_6"));
-
-        gridLayout->addWidget(label_6, 5, 0, 1, 1);
-
-        lineEdit_username = new QLineEdit(groupBox);
-        lineEdit_username->setObjectName(QStringLiteral("lineEdit_username"));
-
-        gridLayout->addWidget(lineEdit_username, 5, 2, 1, 1);
+        verticalLayout->addLayout(horizontalLayout_2);
 
 
-        verticalLayout->addWidget(groupBox);
+        horizontalLayout_5->addLayout(verticalLayout);
+
+
+        verticalLayout_3->addLayout(horizontalLayout_5);
+
+        plainTextEdit_2 = new QPlainTextEdit(groupBox);
+        plainTextEdit_2->setObjectName(QStringLiteral("plainTextEdit_2"));
+
+        verticalLayout_3->addWidget(plainTextEdit_2);
+
+        read = new QCheckBox(groupBox);
+        read->setObjectName(QStringLiteral("read"));
+
+        verticalLayout_3->addWidget(read);
+
+
+        verticalLayout_4->addWidget(groupBox);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
@@ -304,9 +334,9 @@ public:
         horizontalLayout_3->addItem(horizontalSpacer_2);
 
 
-        verticalLayout->addLayout(horizontalLayout_3);
+        verticalLayout_4->addLayout(horizontalLayout_3);
 
-        pushButton->raise();
+        groupBox->raise();
 
         retranslateUi(SignUpDialog);
 
@@ -315,29 +345,30 @@ public:
 
     void retranslateUi(QDialog *SignUpDialog)
     {
-        SignUpDialog->setWindowTitle(QApplication::translate("SignUpDialog", "Dialog", Q_NULLPTR));
-        groupBox->setTitle(QApplication::translate("SignUpDialog", "\304\220\304\203ng k\303\255", Q_NULLPTR));
-        radioButton_male->setText(QApplication::translate("SignUpDialog", "Nam", Q_NULLPTR));
-        radioButton_female->setText(QApplication::translate("SignUpDialog", "N\341\273\257", Q_NULLPTR));
-        radioButton_others->setText(QApplication::translate("SignUpDialog", "Kh\303\241c", Q_NULLPTR));
-        label_3->setText(QApplication::translate("SignUpDialog", "M\341\272\255t kh\341\272\251u", Q_NULLPTR));
+        SignUpDialog->setWindowTitle(QApplication::translate("SignUpDialog", "\304\220\304\203ng k\303\255", Q_NULLPTR));
+        groupBox->setTitle(QString());
         label->setText(QApplication::translate("SignUpDialog", "T\303\252n t\303\240i kho\341\272\243n", Q_NULLPTR));
         label_2->setText(QApplication::translate("SignUpDialog", "CMND/MSSV", Q_NULLPTR));
-        label_7->setText(QApplication::translate("SignUpDialog", "Ngh\341\273\201 nghi\341\273\207p", Q_NULLPTR));
+        label_3->setText(QApplication::translate("SignUpDialog", "M\341\272\255t kh\341\272\251u", Q_NULLPTR));
+        label_8->setText(QApplication::translate("SignUpDialog", "X\303\241c nh\341\272\255n m\341\272\255t kh\341\272\251u", Q_NULLPTR));
         label_4->setText(QApplication::translate("SignUpDialog", "Email", Q_NULLPTR));
+        label_6->setText(QApplication::translate("SignUpDialog", "H\341\273\215 v\303\240 t\303\252n", Q_NULLPTR));
         label_5->setText(QApplication::translate("SignUpDialog", "Ng\303\240y sinh", Q_NULLPTR));
+        label_7->setText(QApplication::translate("SignUpDialog", "Ngh\341\273\201 nghi\341\273\207p", Q_NULLPTR));
+        label_14->setText(QApplication::translate("SignUpDialog", "Gi\341\273\233i t\303\255nh", Q_NULLPTR));
+        label_9->setText(QApplication::translate("SignUpDialog", "Vai tr\303\262", Q_NULLPTR));
         label_11->setText(QApplication::translate("SignUpDialog", "DD", Q_NULLPTR));
         label_12->setText(QApplication::translate("SignUpDialog", "MM", Q_NULLPTR));
         label_13->setText(QApplication::translate("SignUpDialog", "YYYY", Q_NULLPTR));
+        radioButton_male->setText(QApplication::translate("SignUpDialog", "Nam", Q_NULLPTR));
+        radioButton_female->setText(QApplication::translate("SignUpDialog", "N\341\273\257", Q_NULLPTR));
+        radioButton_others->setText(QApplication::translate("SignUpDialog", "Kh\303\241c", Q_NULLPTR));
         checkBox_reader->setText(QApplication::translate("SignUpDialog", "\304\220\341\273\231c gi\341\272\243", Q_NULLPTR));
         checkBox_librarian->setText(QApplication::translate("SignUpDialog", "Th\341\273\247 th\306\260", Q_NULLPTR));
         checkBox_admin->setText(QApplication::translate("SignUpDialog", "Qu\341\272\243n l\303\255", Q_NULLPTR));
-        label_8->setText(QApplication::translate("SignUpDialog", "X\303\241c nh\341\272\255n m\341\272\255t kh\341\272\251u", Q_NULLPTR));
-        label_14->setText(QApplication::translate("SignUpDialog", "Gi\341\273\233i t\303\255nh", Q_NULLPTR));
-        label_9->setText(QApplication::translate("SignUpDialog", "Vai tr\303\262", Q_NULLPTR));
-        label_6->setText(QApplication::translate("SignUpDialog", "H\341\273\215 v\303\240 t\303\252n", Q_NULLPTR));
+        read->setText(QApplication::translate("SignUpDialog", "T\303\264i \304\221\303\243 \304\221\341\273\215c v\303\240 \304\221\341\273\223ng \303\275 v\341\273\233i c\303\241c quy \304\221\341\273\213nh c\341\273\247a th\306\260 vi\341\273\207n.", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("SignUpDialog", "OK", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("SignUpDialog", "Cancel", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("SignUpDialog", "Hu\341\273\267", Q_NULLPTR));
     } // retranslateUi
 
 };

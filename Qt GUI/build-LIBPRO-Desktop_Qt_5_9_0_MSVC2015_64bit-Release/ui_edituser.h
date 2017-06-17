@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
@@ -20,8 +21,6 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -29,8 +28,7 @@ QT_BEGIN_NAMESPACE
 class Ui_editUSER
 {
 public:
-    QWidget *layoutWidget;
-    QVBoxLayout *verticalLayout_2;
+    QPushButton *pushButton_reset;
     QGroupBox *groupBox;
     QLabel *label_6;
     QLabel *label_3;
@@ -44,39 +42,44 @@ public:
     QLineEdit *lineEdit_cmnd;
     QLineEdit *lineEdit_email;
     QLineEdit *lineEdit_ngaysinh;
-    QLineEdit *lineEdit_congviec;
     QLineEdit *lineEdit_nghenghiep;
-    QHBoxLayout *horizontalLayout_8;
-    QPushButton *pushButton_update;
-    QPushButton *pushButton;
-    QPushButton *pushButton_del;
-    QPushButton *pushButton_lock;
-    QPushButton *pushButton_reset;
-    QWidget *layoutWidget1;
-    QHBoxLayout *horizontalLayout_9;
-    QSpacerItem *horizontalSpacer;
     QLabel *label_8;
-    QSpacerItem *horizontalSpacer_2;
+    QLineEdit *lineEdit_gioitinh;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout;
+    QCheckBox *checkBox_dg;
+    QCheckBox *checkBox_tt;
+    QCheckBox *checkBox_ql;
+    QPushButton *pushButton_update;
+    QPushButton *pushButton_lock;
+    QPushButton *pushButton_del;
+    QPushButton *pushButton_deall;
+    QPushButton *pushButton_2;
+    QLabel *status;
 
     void setupUi(QDialog *editUSER)
     {
         if (editUSER->objectName().isEmpty())
             editUSER->setObjectName(QStringLiteral("editUSER"));
-        editUSER->resize(525, 312);
+        editUSER->resize(506, 288);
         QIcon icon;
         icon.addFile(QStringLiteral(":/images/users.png"), QSize(), QIcon::Normal, QIcon::Off);
         editUSER->setWindowIcon(icon);
-        layoutWidget = new QWidget(editUSER);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 20, 504, 281));
-        verticalLayout_2 = new QVBoxLayout(layoutWidget);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        groupBox = new QGroupBox(layoutWidget);
+        pushButton_reset = new QPushButton(editUSER);
+        pushButton_reset->setObjectName(QStringLiteral("pushButton_reset"));
+        pushButton_reset->setGeometry(QRect(400, 10, 51, 51));
+        pushButton_reset->setStyleSheet(QStringLiteral(""));
+        QIcon icon1;
+        icon1.addFile(QStringLiteral(":/images/reset2.png"), QSize(), QIcon::Selected, QIcon::Off);
+        pushButton_reset->setIcon(icon1);
+        pushButton_reset->setIconSize(QSize(49, 61));
+        pushButton_reset->setCheckable(true);
+        groupBox = new QGroupBox(editUSER);
         groupBox->setObjectName(QStringLiteral("groupBox"));
+        groupBox->setGeometry(QRect(10, 10, 381, 261));
         label_6 = new QLabel(groupBox);
         label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setGeometry(QRect(20, 170, 47, 16));
+        label_6->setGeometry(QRect(40, 170, 47, 16));
         label_3 = new QLabel(groupBox);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(10, 80, 59, 16));
@@ -97,29 +100,52 @@ public:
         label_5->setGeometry(QRect(20, 140, 47, 16));
         lineEdit_taikhoan = new QLineEdit(groupBox);
         lineEdit_taikhoan->setObjectName(QStringLiteral("lineEdit_taikhoan"));
-        lineEdit_taikhoan->setGeometry(QRect(80, 20, 411, 20));
+        lineEdit_taikhoan->setGeometry(QRect(80, 20, 291, 20));
         lineEdit_hoten = new QLineEdit(groupBox);
         lineEdit_hoten->setObjectName(QStringLiteral("lineEdit_hoten"));
-        lineEdit_hoten->setGeometry(QRect(80, 50, 411, 20));
+        lineEdit_hoten->setGeometry(QRect(80, 50, 291, 20));
         lineEdit_cmnd = new QLineEdit(groupBox);
         lineEdit_cmnd->setObjectName(QStringLiteral("lineEdit_cmnd"));
-        lineEdit_cmnd->setGeometry(QRect(80, 80, 411, 20));
+        lineEdit_cmnd->setGeometry(QRect(80, 80, 291, 20));
         lineEdit_email = new QLineEdit(groupBox);
         lineEdit_email->setObjectName(QStringLiteral("lineEdit_email"));
-        lineEdit_email->setGeometry(QRect(80, 110, 411, 20));
+        lineEdit_email->setGeometry(QRect(80, 110, 291, 20));
         lineEdit_ngaysinh = new QLineEdit(groupBox);
         lineEdit_ngaysinh->setObjectName(QStringLiteral("lineEdit_ngaysinh"));
-        lineEdit_ngaysinh->setGeometry(QRect(80, 140, 411, 20));
-        lineEdit_congviec = new QLineEdit(groupBox);
-        lineEdit_congviec->setObjectName(QStringLiteral("lineEdit_congviec"));
-        lineEdit_congviec->setGeometry(QRect(80, 170, 411, 20));
+        lineEdit_ngaysinh->setGeometry(QRect(80, 140, 291, 20));
         lineEdit_nghenghiep = new QLineEdit(groupBox);
         lineEdit_nghenghiep->setObjectName(QStringLiteral("lineEdit_nghenghiep"));
-        lineEdit_nghenghiep->setGeometry(QRect(80, 200, 411, 20));
+        lineEdit_nghenghiep->setGeometry(QRect(80, 200, 291, 20));
+        label_8 = new QLabel(groupBox);
+        label_8->setObjectName(QStringLiteral("label_8"));
+        label_8->setGeometry(QRect(30, 230, 47, 13));
+        lineEdit_gioitinh = new QLineEdit(groupBox);
+        lineEdit_gioitinh->setObjectName(QStringLiteral("lineEdit_gioitinh"));
+        lineEdit_gioitinh->setGeometry(QRect(80, 230, 291, 20));
+        widget = new QWidget(groupBox);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(80, 170, 291, 20));
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        checkBox_dg = new QCheckBox(widget);
+        checkBox_dg->setObjectName(QStringLiteral("checkBox_dg"));
+
+        horizontalLayout->addWidget(checkBox_dg);
+
+        checkBox_tt = new QCheckBox(widget);
+        checkBox_tt->setObjectName(QStringLiteral("checkBox_tt"));
+
+        horizontalLayout->addWidget(checkBox_tt);
+
+        checkBox_ql = new QCheckBox(widget);
+        checkBox_ql->setObjectName(QStringLiteral("checkBox_ql"));
+
+        horizontalLayout->addWidget(checkBox_ql);
+
         lineEdit_cmnd->raise();
         lineEdit_email->raise();
         lineEdit_ngaysinh->raise();
-        lineEdit_congviec->raise();
         lineEdit_nghenghiep->raise();
         lineEdit_taikhoan->raise();
         lineEdit_hoten->raise();
@@ -130,58 +156,63 @@ public:
         label_7->raise();
         label->raise();
         label_5->raise();
-
-        verticalLayout_2->addWidget(groupBox);
-
-        horizontalLayout_8 = new QHBoxLayout();
-        horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
-        pushButton_update = new QPushButton(layoutWidget);
+        checkBox_dg->raise();
+        checkBox_tt->raise();
+        checkBox_ql->raise();
+        label_8->raise();
+        lineEdit_gioitinh->raise();
+        pushButton_update = new QPushButton(editUSER);
         pushButton_update->setObjectName(QStringLiteral("pushButton_update"));
-
-        horizontalLayout_8->addWidget(pushButton_update);
-
-        pushButton = new QPushButton(layoutWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-
-        horizontalLayout_8->addWidget(pushButton);
-
-        pushButton_del = new QPushButton(layoutWidget);
-        pushButton_del->setObjectName(QStringLiteral("pushButton_del"));
-
-        horizontalLayout_8->addWidget(pushButton_del);
-
-        pushButton_lock = new QPushButton(layoutWidget);
+        pushButton_update->setGeometry(QRect(400, 110, 51, 51));
+        pushButton_update->setStyleSheet(QStringLiteral(""));
+        QIcon icon2;
+        icon2.addFile(QStringLiteral(":/images/update2.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_update->setIcon(icon2);
+        pushButton_update->setIconSize(QSize(40, 40));
+        pushButton_lock = new QPushButton(editUSER);
         pushButton_lock->setObjectName(QStringLiteral("pushButton_lock"));
-
-        horizontalLayout_8->addWidget(pushButton_lock);
-
-        pushButton_reset = new QPushButton(layoutWidget);
-        pushButton_reset->setObjectName(QStringLiteral("pushButton_reset"));
-
-        horizontalLayout_8->addWidget(pushButton_reset);
-
-
-        verticalLayout_2->addLayout(horizontalLayout_8);
-
-        layoutWidget1 = new QWidget(editUSER);
-        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(10, 0, 501, 22));
-        horizontalLayout_9 = new QHBoxLayout(layoutWidget1);
-        horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
-        horizontalLayout_9->setContentsMargins(0, 0, 0, 0);
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_9->addItem(horizontalSpacer);
-
-        label_8 = new QLabel(layoutWidget1);
-        label_8->setObjectName(QStringLiteral("label_8"));
-
-        horizontalLayout_9->addWidget(label_8);
-
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_9->addItem(horizontalSpacer_2);
-
+        pushButton_lock->setGeometry(QRect(450, 10, 51, 51));
+        pushButton_lock->setStyleSheet(QStringLiteral(""));
+        QIcon icon3;
+        icon3.addFile(QStringLiteral(":/images/select_code-512.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_lock->setIcon(icon3);
+        pushButton_lock->setIconSize(QSize(40, 40));
+        pushButton_lock->setAutoDefault(true);
+        pushButton_del = new QPushButton(editUSER);
+        pushButton_del->setObjectName(QStringLiteral("pushButton_del"));
+        pushButton_del->setGeometry(QRect(400, 60, 51, 51));
+        pushButton_del->setAutoFillBackground(true);
+        pushButton_del->setStyleSheet(QStringLiteral(""));
+        QIcon icon4;
+        icon4.addFile(QStringLiteral(":/images/del3.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_del->setIcon(icon4);
+        pushButton_del->setIconSize(QSize(40, 40));
+        pushButton_del->setAutoRepeat(true);
+        pushButton_deall = new QPushButton(editUSER);
+        pushButton_deall->setObjectName(QStringLiteral("pushButton_deall"));
+        pushButton_deall->setGeometry(QRect(450, 60, 51, 51));
+        QIcon icon5;
+        icon5.addFile(QStringLiteral(":/images/del2.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_deall->setIcon(icon5);
+        pushButton_deall->setIconSize(QSize(40, 40));
+        pushButton_2 = new QPushButton(editUSER);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(450, 110, 51, 51));
+        QIcon icon6;
+        icon6.addFile(QStringLiteral(":/images/ucontract.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_2->setIcon(icon6);
+        pushButton_2->setIconSize(QSize(40, 40));
+        status = new QLabel(editUSER);
+        status->setObjectName(QStringLiteral("status"));
+        status->setGeometry(QRect(400, 180, 91, 71));
+        pushButton_reset->raise();
+        groupBox->raise();
+        pushButton_del->raise();
+        pushButton_update->raise();
+        pushButton_lock->raise();
+        pushButton_deall->raise();
+        pushButton_2->raise();
+        status->raise();
 
         retranslateUi(editUSER);
 
@@ -190,21 +221,62 @@ public:
 
     void retranslateUi(QDialog *editUSER)
     {
-        editUSER->setWindowTitle(QApplication::translate("editUSER", "Ng\306\260\341\273\235i d\303\271ng", Q_NULLPTR));
+        editUSER->setWindowTitle(QApplication::translate("editUSER", "Th\303\264ng tin ng\306\260\341\273\235i d\303\271ng", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        pushButton_reset->setToolTip(QApplication::translate("editUSER", "Kho\303\241/M\341\273\237 kho\303\241 t\303\240i kho\341\272\243n", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_STATUSTIP
+        pushButton_reset->setStatusTip(QApplication::translate("editUSER", "Kho\303\241/M\341\273\237 kho\303\241 t\303\240i kho\341\272\243n n\303\240y", Q_NULLPTR));
+#endif // QT_NO_STATUSTIP
+        pushButton_reset->setText(QString());
         groupBox->setTitle(QString());
-        label_6->setText(QApplication::translate("editUSER", "C\303\264ng vi\341\273\207c", Q_NULLPTR));
+        label_6->setText(QApplication::translate("editUSER", "Vai tr\303\262", Q_NULLPTR));
         label_3->setText(QApplication::translate("editUSER", "CMND/MSSV", Q_NULLPTR));
         label_4->setText(QApplication::translate("editUSER", "Email", Q_NULLPTR));
         label_2->setText(QApplication::translate("editUSER", "H\341\273\215 t\303\252n", Q_NULLPTR));
         label_7->setText(QApplication::translate("editUSER", "Ngh\341\273\201 nghi\341\273\207p", Q_NULLPTR));
         label->setText(QApplication::translate("editUSER", "T\303\240i kho\341\272\243n", Q_NULLPTR));
         label_5->setText(QApplication::translate("editUSER", "Ng\303\240y sinh", Q_NULLPTR));
-        pushButton_update->setText(QApplication::translate("editUSER", "C\341\272\255p nh\341\272\255t", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("editUSER", "Xo\303\241 ng\306\260\341\273\235i d\303\271ng", Q_NULLPTR));
-        pushButton_del->setText(QApplication::translate("editUSER", "Xo\303\241 t\303\240i kho\341\272\243n", Q_NULLPTR));
-        pushButton_lock->setText(QApplication::translate("editUSER", "Kho\303\241 t\303\240i kho\341\272\243n", Q_NULLPTR));
-        pushButton_reset->setText(QApplication::translate("editUSER", "Reset m\341\272\255t kh\341\272\251u", Q_NULLPTR));
-        label_8->setText(QApplication::translate("editUSER", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">TH\303\224NG TIN NG\306\257\341\273\234I D\303\231NG</span></p></body></html>", Q_NULLPTR));
+        label_8->setText(QApplication::translate("editUSER", "Gi\341\273\233i t\303\255nh", Q_NULLPTR));
+        checkBox_dg->setText(QApplication::translate("editUSER", "\304\220\341\273\231c gi\341\272\243", Q_NULLPTR));
+        checkBox_tt->setText(QApplication::translate("editUSER", "Th\341\273\247 th\306\260", Q_NULLPTR));
+        checkBox_ql->setText(QApplication::translate("editUSER", "Qu\341\272\243n l\303\275", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        pushButton_update->setToolTip(QApplication::translate("editUSER", "C\341\272\255p nh\341\272\255t", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_STATUSTIP
+        pushButton_update->setStatusTip(QApplication::translate("editUSER", "C\341\272\255p nh\341\272\255t th\303\264ng tin \304\221\303\243 thay \304\221\341\273\225i", Q_NULLPTR));
+#endif // QT_NO_STATUSTIP
+        pushButton_update->setText(QString());
+#ifndef QT_NO_TOOLTIP
+        pushButton_lock->setToolTip(QApplication::translate("editUSER", "\304\220\341\272\267t l\341\272\241i m\341\272\255t kh\341\272\251u", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_STATUSTIP
+        pushButton_lock->setStatusTip(QApplication::translate("editUSER", "Reset m\341\272\255t kh\341\272\251u cho t\303\240i kho\341\272\243n n\303\240y", Q_NULLPTR));
+#endif // QT_NO_STATUSTIP
+        pushButton_lock->setText(QString());
+#ifndef QT_NO_TOOLTIP
+        pushButton_del->setToolTip(QApplication::translate("editUSER", "Xo\303\241 t\303\240i kho\341\272\243n", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_STATUSTIP
+        pushButton_del->setStatusTip(QApplication::translate("editUSER", "Xo\303\241 t\303\240i kho\341\272\243n n\303\240y kh\341\273\217i h\341\273\207 th\341\273\221ng", Q_NULLPTR));
+#endif // QT_NO_STATUSTIP
+        pushButton_del->setText(QString());
+#ifndef QT_NO_TOOLTIP
+        pushButton_deall->setToolTip(QApplication::translate("editUSER", "Xo\303\241 ng\306\260\341\273\235i d\303\271ng", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_STATUSTIP
+        pushButton_deall->setStatusTip(QApplication::translate("editUSER", "Xo\303\241 ng\306\260\341\273\235i d\303\271ng n\303\240y ra kh\341\273\217i h\341\273\207 th\341\273\221ng", Q_NULLPTR));
+#endif // QT_NO_STATUSTIP
+        pushButton_deall->setText(QString());
+#ifndef QT_NO_TOOLTIP
+        pushButton_2->setToolTip(QApplication::translate("editUSER", "S\341\273\255a th\303\264ng tin", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_STATUSTIP
+        pushButton_2->setStatusTip(QApplication::translate("editUSER", "S\341\273\255a \304\221\341\273\225i th\303\264ng tin t\303\240i kho\341\272\243n n\303\240y", Q_NULLPTR));
+#endif // QT_NO_STATUSTIP
+        pushButton_2->setText(QString());
+        status->setText(QString());
     } // retranslateUi
 
 };

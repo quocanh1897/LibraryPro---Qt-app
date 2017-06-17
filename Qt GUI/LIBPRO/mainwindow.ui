@@ -64,7 +64,8 @@
    <addaction name="separator"/>
    <addaction name="actionUser"/>
    <addaction name="separator"/>
-   <addaction name="actionSignOut"/>
+   <addaction name="actionNotice"/>
+   <addaction name="actionMail"/>
   </widget>
   <widget class="QToolBar" name="toolBar_2">
    <property name="windowTitle">
@@ -77,8 +78,6 @@
     <bool>true</bool>
    </attribute>
    <addaction name="actionabout"/>
-   <addaction name="separator"/>
-   <addaction name="actionguide"/>
    <addaction name="separator"/>
    <addaction name="actionrule"/>
    <addaction name="separator"/>
@@ -129,8 +128,14 @@
    <property name="toolTip">
     <string>Đăng nhập</string>
    </property>
+   <property name="statusTip">
+    <string>Đăng nhập vào hệ thống</string>
+   </property>
   </action>
   <action name="actionSignOut">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="icon">
     <iconset resource="src.qrc">
      <normaloff>:/images/signout.ico</normaloff>:/images/signout.ico</iconset>
@@ -175,21 +180,6 @@
     <string>Liên hệ với nhân viên thư viện</string>
    </property>
   </action>
-  <action name="actionguide">
-   <property name="icon">
-    <iconset theme="guide" resource="src.qrc">
-     <normaloff>:/images/25.png</normaloff>:/images/25.png</iconset>
-   </property>
-   <property name="text">
-    <string>guide</string>
-   </property>
-   <property name="toolTip">
-    <string>Hướng Dẫn</string>
-   </property>
-   <property name="statusTip">
-    <string>Hướng dẫn sử dụng thư viện</string>
-   </property>
-  </action>
   <action name="actionrule">
    <property name="icon">
     <iconset theme="rule" resource="src.qrc">
@@ -218,6 +208,30 @@
    </property>
    <property name="statusTip">
     <string>Thông tin tác giả</string>
+   </property>
+  </action>
+  <action name="actionNotice">
+   <property name="icon">
+    <iconset resource="src.qrc">
+     <normaloff>:/images/notice.png</normaloff>:/images/notice.png</iconset>
+   </property>
+   <property name="text">
+    <string>Notice</string>
+   </property>
+   <property name="toolTip">
+    <string>Thông báo</string>
+   </property>
+  </action>
+  <action name="actionMail">
+   <property name="icon">
+    <iconset resource="src.qrc">
+     <normaloff>:/images/m.png</normaloff>:/images/m.png</iconset>
+   </property>
+   <property name="text">
+    <string>Mail</string>
+   </property>
+   <property name="toolTip">
+    <string>Hộp thư</string>
    </property>
   </action>
  </widget>

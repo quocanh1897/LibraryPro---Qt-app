@@ -20,7 +20,6 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -35,22 +34,21 @@ public:
     QLabel *label_2;
     QWidget *widget;
     QHBoxLayout *horizontalLayout;
-    QSpacerItem *horizontalSpacer;
     QPushButton *pushButton;
+    QPushButton *pushButton_3;
     QPushButton *pushButton_2;
-    QSpacerItem *horizontalSpacer_2;
 
     void setupUi(QDialog *SignIn)
     {
         if (SignIn->objectName().isEmpty())
             SignIn->setObjectName(QStringLiteral("SignIn"));
-        SignIn->resize(259, 137);
+        SignIn->resize(279, 143);
         QIcon icon;
         icon.addFile(QStringLiteral(":/images/acc.png"), QSize(), QIcon::Normal, QIcon::Off);
         SignIn->setWindowIcon(icon);
         groupBox = new QGroupBox(SignIn);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(11, 11, 239, 77));
+        groupBox->setGeometry(QRect(11, 11, 261, 77));
         label = new QLabel(groupBox);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(20, 20, 71, 19));
@@ -60,10 +58,10 @@ public:
         label->setStyleSheet(QStringLiteral(""));
         lineEdit = new QLineEdit(groupBox);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(100, 20, 133, 21));
+        lineEdit->setGeometry(QRect(100, 20, 151, 21));
         lineEdit_2 = new QLineEdit(groupBox);
         lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(100, 50, 133, 20));
+        lineEdit_2->setGeometry(QRect(100, 50, 151, 20));
         lineEdit_2->setEchoMode(QLineEdit::Password);
         label_2 = new QLabel(groupBox);
         label_2->setObjectName(QStringLiteral("label_2"));
@@ -71,29 +69,29 @@ public:
         label_2->setFont(font);
         widget = new QWidget(SignIn);
         widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(11, 94, 241, 31));
+        widget->setGeometry(QRect(10, 100, 259, 26));
         horizontalLayout = new QHBoxLayout(widget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer);
-
         pushButton = new QPushButton(widget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setFont(font);
+        QFont font1;
+        font1.setPointSize(10);
+        pushButton->setFont(font1);
 
         horizontalLayout->addWidget(pushButton);
 
+        pushButton_3 = new QPushButton(widget);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setFont(font1);
+
+        horizontalLayout->addWidget(pushButton_3);
+
         pushButton_2 = new QPushButton(widget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setFont(font);
+        pushButton_2->setFont(font1);
 
         horizontalLayout->addWidget(pushButton_2);
-
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_2);
 
 
         retranslateUi(SignIn);
@@ -108,6 +106,7 @@ public:
         label->setText(QApplication::translate("SignIn", "T\303\240i Kho\341\272\243n", Q_NULLPTR));
         label_2->setText(QApplication::translate("SignIn", "M\341\272\255t Kh\341\272\251u", Q_NULLPTR));
         pushButton->setText(QApplication::translate("SignIn", "\304\220\304\203ng Nh\341\272\255p", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("SignIn", "Qu\303\252n m\341\272\255t kh\341\272\251u", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("SignIn", "\304\220\303\263ng", Q_NULLPTR));
     } // retranslateUi
 

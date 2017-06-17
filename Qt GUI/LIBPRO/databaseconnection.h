@@ -22,7 +22,6 @@ public:
         return mydb.open();
     }
 
-
     void closeConnection(){
         mydb.close();
     }

@@ -2,6 +2,7 @@
 #define SIGNIN_H
 #include <QDialog>
 #include "mainwindow.h"
+extern QString proname;
 namespace Ui {
 class SignIn;
 }
@@ -17,6 +18,8 @@ private slots:
     void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
 
 private:
     Ui::SignIn *ui;

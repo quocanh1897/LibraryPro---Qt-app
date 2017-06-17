@@ -3,20 +3,23 @@
 #include "home.h"
 #include "databaseconnection.h"
 #include "QDebug"
+#include "forgetpass.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "encrypt.h"
 SignIn::SignIn(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::SignIn)
 {
     ui->setupUi(this);
+    this->setFixedSize(279,138);
 }
 
 SignIn::~SignIn()
 {
     delete ui;
 }
-
+QString proname;
 void SignIn::on_pushButton_clicked()
 {
     connectDatabase si;
@@ -26,9 +29,10 @@ void SignIn::on_pushButton_clicked()
     }
     si.openConnection();
     QString accName = ui->lineEdit->text();
-    QString accPass = ui->lineEdit_2->text();
+    QString Pass = ui->lineEdit_2->text();
+    QString accPass = encrypt(Pass, accName);
     QSqlQuery qry;
-    //if(qry.exec("select * from TAIKHOAN where TAIKHOAN =\'" + accName + "\' and MATKHAU =\'"+accPass+"\'")){
+
     if(qry.exec("select * from TAIKHOAN where TAIKHOAN =\'" + accName + "\' and MATKHAU =\'"+accPass+"\'")){
         if(qry.next()){
              bool accA = qry.value(5).toBool();
@@ -38,9 +42,9 @@ void SignIn::on_pushButton_clicked()
              QString accN = qry.value(1).toString();
              QString PIN = qry.value(0).toString();
             if(accK){
-                QMessageBox::about(this,"Đăng nhập thành công","Tài khoản <b>" + accN +"</b>");
+                QMessageBox::about(this,"Thành công","Bạn đã đăng nhập vào tài khoản <b>" + accN +"</b>");
                 this->close();
-
+                proname = accN;
                 MainWindow *n = new MainWindow(accA,accR,accL,PIN,accN,0);
                 n->setWindowTitle("[+] " + accN + " [+]" );
                 n->show();
@@ -55,6 +59,7 @@ void SignIn::on_pushButton_clicked()
             this->show();
         }
     }
+    si.closeConnection();
 }
 
 
@@ -65,4 +70,12 @@ void SignIn::on_pushButton_2_clicked()
     this->close();
     mw->show();
 
+}
+
+void SignIn::on_pushButton_3_clicked()
+{
+    forgetpass fp;
+    this->close();
+    fp.setModal(true);
+    fp.exec();
 }
