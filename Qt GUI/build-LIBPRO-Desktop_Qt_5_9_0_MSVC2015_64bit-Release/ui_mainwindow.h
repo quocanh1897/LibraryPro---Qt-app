@@ -32,9 +32,10 @@ public:
     QAction *actionSignOut;
     QAction *actionHome;
     QAction *actioncontact;
-    QAction *actionguide;
     QAction *actionrule;
     QAction *actionabout;
+    QAction *actionNotice;
+    QAction *actionMail;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QTabWidget *tabWidget;
@@ -73,6 +74,7 @@ public:
         actionSignIn->setIcon(icon3);
         actionSignOut = new QAction(MainWindow);
         actionSignOut->setObjectName(QStringLiteral("actionSignOut"));
+        actionSignOut->setEnabled(true);
         QIcon icon4;
         icon4.addFile(QStringLiteral(":/images/signout.ico"), QSize(), QIcon::Normal, QIcon::Off);
         actionSignOut->setIcon(icon4);
@@ -86,31 +88,31 @@ public:
         QIcon icon6;
         icon6.addFile(QStringLiteral(":/images/about-us-icon-15.png"), QSize(), QIcon::Normal, QIcon::Off);
         actioncontact->setIcon(icon6);
-        actionguide = new QAction(MainWindow);
-        actionguide->setObjectName(QStringLiteral("actionguide"));
+        actionrule = new QAction(MainWindow);
+        actionrule->setObjectName(QStringLiteral("actionrule"));
         QIcon icon7;
-        QString iconThemeName = QStringLiteral("guide");
+        QString iconThemeName = QStringLiteral("rule");
         if (QIcon::hasThemeIcon(iconThemeName)) {
             icon7 = QIcon::fromTheme(iconThemeName);
         } else {
-            icon7.addFile(QStringLiteral(":/images/25.png"), QSize(), QIcon::Normal, QIcon::Off);
+            icon7.addFile(QStringLiteral(":/images/rule.png"), QSize(), QIcon::Normal, QIcon::Off);
         }
-        actionguide->setIcon(icon7);
-        actionrule = new QAction(MainWindow);
-        actionrule->setObjectName(QStringLiteral("actionrule"));
-        QIcon icon8;
-        iconThemeName = QStringLiteral("rule");
-        if (QIcon::hasThemeIcon(iconThemeName)) {
-            icon8 = QIcon::fromTheme(iconThemeName);
-        } else {
-            icon8.addFile(QStringLiteral(":/images/rule.png"), QSize(), QIcon::Normal, QIcon::Off);
-        }
-        actionrule->setIcon(icon8);
+        actionrule->setIcon(icon7);
         actionabout = new QAction(MainWindow);
         actionabout->setObjectName(QStringLiteral("actionabout"));
+        QIcon icon8;
+        icon8.addFile(QStringLiteral(":/images/contact.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionabout->setIcon(icon8);
+        actionNotice = new QAction(MainWindow);
+        actionNotice->setObjectName(QStringLiteral("actionNotice"));
         QIcon icon9;
-        icon9.addFile(QStringLiteral(":/images/contact.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionabout->setIcon(icon9);
+        icon9.addFile(QStringLiteral(":/images/notice.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionNotice->setIcon(icon9);
+        actionMail = new QAction(MainWindow);
+        actionMail->setObjectName(QStringLiteral("actionMail"));
+        QIcon icon10;
+        icon10.addFile(QStringLiteral(":/images/m.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionMail->setIcon(icon10);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -138,10 +140,9 @@ public:
         toolBar->addSeparator();
         toolBar->addAction(actionUser);
         toolBar->addSeparator();
-        toolBar->addAction(actionSignOut);
+        toolBar->addAction(actionNotice);
+        toolBar->addAction(actionMail);
         toolBar_2->addAction(actionabout);
-        toolBar_2->addSeparator();
-        toolBar_2->addAction(actionguide);
         toolBar_2->addSeparator();
         toolBar_2->addAction(actionrule);
         toolBar_2->addSeparator();
@@ -180,6 +181,9 @@ public:
 #ifndef QT_NO_TOOLTIP
         actionSignIn->setToolTip(QApplication::translate("MainWindow", "\304\220\304\203ng nh\341\272\255p", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
+#ifndef QT_NO_STATUSTIP
+        actionSignIn->setStatusTip(QApplication::translate("MainWindow", "\304\220\304\203ng nh\341\272\255p v\303\240o h\341\273\207 th\341\273\221ng", Q_NULLPTR));
+#endif // QT_NO_STATUSTIP
         actionSignOut->setText(QApplication::translate("MainWindow", "SignOut", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
         actionSignOut->setToolTip(QApplication::translate("MainWindow", "Tho\303\241t", Q_NULLPTR));
@@ -201,13 +205,6 @@ public:
 #ifndef QT_NO_STATUSTIP
         actioncontact->setStatusTip(QApplication::translate("MainWindow", "Li\303\252n h\341\273\207 v\341\273\233i nh\303\242n vi\303\252n th\306\260 vi\341\273\207n", Q_NULLPTR));
 #endif // QT_NO_STATUSTIP
-        actionguide->setText(QApplication::translate("MainWindow", "guide", Q_NULLPTR));
-#ifndef QT_NO_TOOLTIP
-        actionguide->setToolTip(QApplication::translate("MainWindow", "H\306\260\341\273\233ng D\341\272\253n", Q_NULLPTR));
-#endif // QT_NO_TOOLTIP
-#ifndef QT_NO_STATUSTIP
-        actionguide->setStatusTip(QApplication::translate("MainWindow", "H\306\260\341\273\233ng d\341\272\253n s\341\273\255 d\341\273\245ng th\306\260 vi\341\273\207n", Q_NULLPTR));
-#endif // QT_NO_STATUSTIP
         actionrule->setText(QApplication::translate("MainWindow", "rule", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
         actionrule->setToolTip(QApplication::translate("MainWindow", "Quy \304\220\341\273\213nh", Q_NULLPTR));
@@ -222,6 +219,14 @@ public:
 #ifndef QT_NO_STATUSTIP
         actionabout->setStatusTip(QApplication::translate("MainWindow", "Th\303\264ng tin t\303\241c gi\341\272\243", Q_NULLPTR));
 #endif // QT_NO_STATUSTIP
+        actionNotice->setText(QApplication::translate("MainWindow", "Notice", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        actionNotice->setToolTip(QApplication::translate("MainWindow", "Th\303\264ng b\303\241o", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        actionMail->setText(QApplication::translate("MainWindow", "Mail", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        actionMail->setToolTip(QApplication::translate("MainWindow", "H\341\273\231p th\306\260", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
         toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", Q_NULLPTR));
         toolBar_2->setWindowTitle(QApplication::translate("MainWindow", "toolBar_2", Q_NULLPTR));
     } // retranslateUi

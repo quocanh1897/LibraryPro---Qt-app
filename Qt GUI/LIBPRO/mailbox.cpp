@@ -26,7 +26,7 @@ MailBox::~MailBox()
 void MailBox::show_table_thuden(QTableView *t){//Hộp thư đến
     QSqlQueryModel *modal = new QSqlQueryModel();
     QSqlQuery * qry = new QSqlQuery(cnect.mydb);
-    qry->prepare("select nguoigui,noidung,thoigian from hopthu where nguoinhan = :nnhan");
+    qry->prepare("select nguoigui,noidung,thoigian from hopthu where nguoinhan = :nnhan order by THOIGIAN DESC");
     qry->bindValue(":nnhan",accName);
     qry->exec();
     modal->setQuery(*qry);
@@ -36,7 +36,7 @@ void MailBox::show_table_thuden(QTableView *t){//Hộp thư đến
 void MailBox::show_table_thugui(QTableView *t){//Thư đã gửi
     QSqlQueryModel *modal = new QSqlQueryModel();
     QSqlQuery * qry = new QSqlQuery(cnect.mydb);
-    qry->prepare("select nguoinhan,noidung,thoigian from hopthu where nguoigui = :ngui");
+    qry->prepare("select nguoinhan,noidung,thoigian from hopthu where nguoigui = :ngui order by THOIGIAN DESC");
     qry->bindValue(":ngui",accName);
     qry->exec();
     modal->setQuery(*qry);
@@ -47,7 +47,7 @@ void MailBox::show_thuden(QString tg){
     QString nguoigui = "";
     QString noidung = "";
     QSqlQuery * qry = new QSqlQuery(cnect.mydb);
-    qry->prepare("select nguoigui,noidung,thoigian from hopthu where thoigian = :tg");
+    qry->prepare("select nguoigui,noidung,thoigian from hopthu where thoigian = :tg order by THOIGIAN DESC");
     qry->bindValue(":tg",tg);
     qry->exec();
     if(qry->next()){
@@ -77,7 +77,7 @@ void MailBox::on_pushButton_2_clicked()//Xoá thư đến
 {
     QModelIndex index = ui->tableView->currentIndex();
     if(!index.isValid()){
-        QMessageBox::about(this,"Lỗi xảy ra","Chọn tin nhắn cần xoá trước");
+        QMessageBox::about(this,"Lỗi","Chọn tin nhắn cần xoá trước");
     }
     else
     {
@@ -94,7 +94,7 @@ void MailBox::on_pushButton_5_clicked()//Xoá thư đã gửi
 {
     QModelIndex index = ui->tableView_3->currentIndex();
     if(!index.isValid()){
-        QMessageBox::about(this,"Lỗi xảy ra","Chọn tin nhắn cần xoá trước");
+        QMessageBox::about(this,"Lỗi","Chọn tin nhắn cần xoá trước");
     }
     else
     {
@@ -116,7 +116,7 @@ void MailBox::on_pushButton_clicked()//Đọc hộp thư đến
     ui->pushButton_2->close();
     QModelIndex index = ui->tableView->currentIndex();
     if(!index.isValid()){
-        QMessageBox::about(this,"Lỗi xảy ra","Chọn tin nhắn cần xem trước :( ");
+        QMessageBox::about(this,"Lỗi","Chọn tin nhắn cần xem trước");
     }
     else
     {
@@ -144,7 +144,7 @@ void MailBox::on_pushButton_4_clicked()//Đọc thư đã gửi
     ui->pushButton_5->close();
     QModelIndex index = ui->tableView_3->currentIndex();
     if(!index.isValid()){
-        QMessageBox::about(this,"Lỗi xảy ra","Chọn tin nhắn cần xem trước :( ");
+        QMessageBox::about(this,"Lỗi","Chọn tin nhắn cần xem trước");
     }
     else
     {
@@ -172,7 +172,7 @@ void MailBox::on_pushButton_3_clicked()//Tạo mới một thư
     inbox->bindValue(":noidung",ui->plainTextEdit->toPlainText());
     inbox->bindValue(":thoigian",QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss"));
     if(ui->lineEdit->text()==""||ui->plainTextEdit->toPlainText() ==""){
-        QMessageBox::warning(this,"Lỗi xảy ra","Bạn không được bỏ trống thông tin :(");
+        QMessageBox::warning(this,"Lỗi","Bạn không được bỏ trống thông tin");
         return;
     }
     else{

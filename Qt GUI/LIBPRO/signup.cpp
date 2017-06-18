@@ -66,11 +66,11 @@ void SignUpDialog::on_pushButton_2_clicked()
 {
     confirm =1;
     if (!(ui->read->isChecked())){
-        QMessageBox::warning(this,"Lỗi!","Bạn chưa đọc quy định!");
+        QMessageBox::warning(this,"Lỗi","Bạn chưa đọc quy định!");
         confirm =0;
     }
     if (!(ui->xacthuc->isChecked())){
-        QMessageBox::warning(this,"Lỗi!","Tài khoản phải được xác thực!");
+        QMessageBox::warning(this,"Lỗi","Tài khoản phải được xác thực!");
         confirm =0;
     }
     if (ui->checkBox_reader->isChecked())
@@ -106,7 +106,7 @@ void SignUpDialog::on_pushButton_2_clicked()
     QString confirmpass = ui->lineEdit_confirm -> text();
     confirmpass = encrypt(confirmpass, accountname);
     if (confirmpass != pass){
-        QMessageBox :: warning (this, "Lỗi!", "Mật khẩu không trùng khớp!");
+        QMessageBox :: warning (this, "Lỗi", "Mật khẩu không trùng khớp!");
         ui->lineEdit_pass ->setText ("");
         ui->lineEdit_confirm ->setText ("");
         confirm=0;
@@ -117,7 +117,7 @@ void SignUpDialog::on_pushButton_2_clicked()
     QString bd = ui->spinBox_d->text() + '/' + ui->spinBox_m->text() +'/'+ ui->spinBox_y->text() ;
     if (gender=="" || accountname=="" ||CMND == "" || pass =="" || email =="" ||username=="" || job =="" )
     {
-        QMessageBox :: warning (this, "Lỗi!", "Bạn phải điền đủ thông tin!");
+        QMessageBox :: warning (this, "Lỗi", "Bạn phải điền đủ thông tin!");
         confirm =0;
      }
 
@@ -131,7 +131,7 @@ void SignUpDialog::on_pushButton_2_clicked()
     QSqlQuery qry,qry2,qry3;
     if(qry.exec("select TAIKHOAN from TAIKHOAN where TAIKHOAN ='" + accountname +"';")){
         if(qry.next()){
-            QMessageBox :: warning (this, "Lỗi!", "Tài khoản đã được sử dụng!");
+            QMessageBox :: warning (this, "Lỗi", "Tài khoản đã được sử dụng!");
             confirm = 0;
         }
     }
@@ -140,7 +140,7 @@ void SignUpDialog::on_pushButton_2_clicked()
         if(qry.next()){
             QString hoten= qry.value(0).toString();
             if (hoten != username){
-                QMessageBox :: warning(this,"Lỗi!","Họ tên không trùng khớp với CMND đã đăng kí!");
+                QMessageBox :: warning(this,"Lỗi","Họ tên không trùng khớp với CMND đã đăng kí!");
                 confirm =0;
             }
         }

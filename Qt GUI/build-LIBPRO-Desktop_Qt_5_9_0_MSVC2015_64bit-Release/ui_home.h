@@ -19,7 +19,6 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QListView>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTableView>
@@ -39,7 +38,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QPushButton *pushButton;
     QSpacerItem *horizontalSpacer_2;
-    QListView *listView;
+    QTableView *tableView_thongbao;
     QGroupBox *groupBox_2;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout_3;
@@ -83,10 +82,10 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
-        listView = new QListView(groupBox);
-        listView->setObjectName(QStringLiteral("listView"));
+        tableView_thongbao = new QTableView(groupBox);
+        tableView_thongbao->setObjectName(QStringLiteral("tableView_thongbao"));
 
-        verticalLayout->addWidget(listView);
+        verticalLayout->addWidget(tableView_thongbao);
 
 
         horizontalLayout_4->addWidget(groupBox);
@@ -109,6 +108,10 @@ public:
 
         pushButton_2 = new QPushButton(groupBox_2);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/images/search-icon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_2->setIcon(icon);
+        pushButton_2->setIconSize(QSize(21, 21));
 
         horizontalLayout_3->addWidget(pushButton_2);
 
@@ -161,7 +164,7 @@ public:
 #ifndef QT_NO_STATUSTIP
         comboBox->setStatusTip(QApplication::translate("Home", "T\303\254m ki\341\272\277m theo", Q_NULLPTR));
 #endif // QT_NO_STATUSTIP
-        pushButton_2->setText(QApplication::translate("Home", "T\303\254m Ki\341\272\277m", Q_NULLPTR));
+        pushButton_2->setText(QString());
         pushButton_muon->setText(QApplication::translate("Home", "M\306\260\341\273\243n s\303\241ch", Q_NULLPTR));
     } // retranslateUi
 

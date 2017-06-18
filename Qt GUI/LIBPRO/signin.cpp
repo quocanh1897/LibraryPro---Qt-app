@@ -24,7 +24,7 @@ void SignIn::on_pushButton_clicked()
 {
     connectDatabase si;
     if(!si.openConnection()){
-        qDebug()<<"Khong co ket noi database :( ";
+        qDebug()<<"Khong co ket noi database ";
         return;
     }
     si.openConnection();

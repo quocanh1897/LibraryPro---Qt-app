@@ -205,7 +205,6 @@ Makefile: ..\LIBPRO\LIBPRO.pro E:\Qt\5.9\msvc2015_64\mkspecs\win32-msvc\qmake.co
 		E:\Qt\5.9\msvc2015_64\mkspecs\features\qt_config.prf \
 		E:\Qt\5.9\msvc2015_64\mkspecs\win32-msvc\qmake.conf \
 		E:\Qt\5.9\msvc2015_64\mkspecs\features\spec_post.prf \
-		.qmake.stash \
 		E:\Qt\5.9\msvc2015_64\mkspecs\features\exclusive_builds.prf \
 		E:\Qt\5.9\msvc2015_64\mkspecs\common\msvc-version.conf \
 		E:\Qt\5.9\msvc2015_64\mkspecs\features\toolchain.prf \
@@ -365,7 +364,6 @@ E:\Qt\5.9\msvc2015_64\mkspecs\features\qt_functions.prf:
 E:\Qt\5.9\msvc2015_64\mkspecs\features\qt_config.prf:
 E:\Qt\5.9\msvc2015_64\mkspecs\win32-msvc\qmake.conf:
 E:\Qt\5.9\msvc2015_64\mkspecs\features\spec_post.prf:
-.qmake.stash:
 E:\Qt\5.9\msvc2015_64\mkspecs\features\exclusive_builds.prf:
 E:\Qt\5.9\msvc2015_64\mkspecs\common\msvc-version.conf:
 E:\Qt\5.9\msvc2015_64\mkspecs\features\toolchain.prf:

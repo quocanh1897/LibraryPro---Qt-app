@@ -79,7 +79,7 @@ void reader::on_pushButton_3_clicked()
 {
     QModelIndex idex = ui->tableView->currentIndex();
     if(!idex.isValid()){
-        QMessageBox::about(this,"Lỗi :(","Xin chọn một sách trước !");
+        QMessageBox::about(this,"Lỗi","Xin chọn một sách trước !");
     }
     else{
         connectDatabase cn;
@@ -136,7 +136,7 @@ void reader::on_pushButton_4_clicked()
     ui->pushButton_9->close();
     ui->tableView1->close();
     if(!idex.isValid()){
-        QMessageBox::warning(this,"Lỗi :(","Xin chọn một thông báo trước !");
+        QMessageBox::warning(this,"Lỗi","Xin chọn một thông báo trước !");
     }
     else{
         QString nd = idex.sibling(idex.row(), 0).data().toString();

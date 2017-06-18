@@ -120,7 +120,7 @@ void librarian::on_pushButton_7_clicked()
 {
     QModelIndex index1 = ui->tableView->currentIndex();
     if(!index1.isValid()){
-        QMessageBox::about(this,"Lỗi xảy ra","Chọn sách cần chỉnh sửa trước");
+        QMessageBox::about(this,"Lỗi","Chọn sách cần chỉnh sửa trước");
     }
     else
     {
@@ -174,7 +174,7 @@ void librarian::on_pushButton_9_clicked()//Cho Muon sach
 {
     QModelIndex index2 = ui->tableView_2->currentIndex();
     if(!index2.isValid()){
-        QMessageBox::about(this,"Lỗi xảy ra","Bạn chưa chọn đối tượng");
+        QMessageBox::about(this,"Lỗi","Bạn chưa chọn đối tượng");
     }
     else
     {
@@ -227,7 +227,7 @@ void librarian::on_pushButton_12_clicked()
 {
     QModelIndex index2 = ui->tableView_2->currentIndex();
     if(!index2.isValid()){
-        QMessageBox::about(this,"Lỗi :(","Xin chọn đối tượng cần huỷ yêu cầu");
+        QMessageBox::about(this,"Lỗi","Xin chọn đối tượng cần huỷ yêu cầu");
     }
     else{
         QString tk = index2.sibling(index2.row(), 0).data().toString();

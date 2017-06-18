@@ -41,8 +41,9 @@ public:
     QLineEdit *lineEdit_id;
     QLineEdit *lineEdit_email;
     QGroupBox *groupBox_2;
-    QVBoxLayout *verticalLayout_3;
+    QHBoxLayout *horizontalLayout_2;
     QLineEdit *lineEdit_pass;
+    QPushButton *pushButton_3;
     QWidget *widget2;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
@@ -60,7 +61,7 @@ public:
         forgetpass->setWindowIcon(icon);
         groupBox = new QGroupBox(forgetpass);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(9, 10, 241, 121));
+        groupBox->setGeometry(QRect(10, 10, 241, 121));
         widget = new QWidget(groupBox);
         widget->setObjectName(QStringLiteral("widget"));
         widget->setGeometry(QRect(11, 24, 71, 81));
@@ -105,14 +106,24 @@ public:
 
         groupBox_2 = new QGroupBox(forgetpass);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        groupBox_2->setGeometry(QRect(40, 40, 151, 53));
-        verticalLayout_3 = new QVBoxLayout(groupBox_2);
-        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        groupBox_2->setGeometry(QRect(20, 20, 231, 56));
+        horizontalLayout_2 = new QHBoxLayout(groupBox_2);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         lineEdit_pass = new QLineEdit(groupBox_2);
         lineEdit_pass->setObjectName(QStringLiteral("lineEdit_pass"));
 
-        verticalLayout_3->addWidget(lineEdit_pass);
+        horizontalLayout_2->addWidget(lineEdit_pass);
 
+        pushButton_3 = new QPushButton(groupBox_2);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        QIcon icon1;
+        icon1.addFile(QStringLiteral(":/images/copy_icon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_3->setIcon(icon1);
+
+        horizontalLayout_2->addWidget(pushButton_3);
+
+        horizontalLayout_2->setStretch(0, 9);
+        horizontalLayout_2->setStretch(1, 1);
         widget2 = new QWidget(forgetpass);
         widget2->setObjectName(QStringLiteral("widget2"));
         widget2->setGeometry(QRect(10, 130, 241, 41));
@@ -133,9 +144,9 @@ public:
 
         pushButton_2 = new QPushButton(widget2);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        QIcon icon1;
-        icon1.addFile(QStringLiteral(":/images/button_cancel.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_2->setIcon(icon1);
+        QIcon icon2;
+        icon2.addFile(QStringLiteral(":/images/button_cancel.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_2->setIcon(icon2);
         pushButton_2->setIconSize(QSize(31, 31));
 
         horizontalLayout->addWidget(pushButton_2);
@@ -158,6 +169,7 @@ public:
         label_2->setText(QApplication::translate("forgetpass", "CMND/MSSV", Q_NULLPTR));
         label_3->setText(QApplication::translate("forgetpass", "Email \304\221\304\203ng k\303\255", Q_NULLPTR));
         groupBox_2->setTitle(QApplication::translate("forgetpass", "M\341\272\255t kh\341\272\251u m\341\273\233i", Q_NULLPTR));
+        pushButton_3->setText(QString());
         pushButton->setText(QString());
         pushButton_2->setText(QString());
     } // retranslateUi

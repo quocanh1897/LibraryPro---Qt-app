@@ -83,7 +83,7 @@ void Cart::on_pushButton_clicked()
                 qry2->bindValue(":ngaymuon",now);
                 qry2->bindValue(":songay",ui->spinBox_2->text().toInt());
             }
-            QMessageBox::information(this,"Thành công","Cảm ơn, chúng tôi sẽ xét duyệt yêu cầu của bạn sớm nhất có thể:)");
+            QMessageBox::information(this,"Thành công","Thư viện sẽ xét duyệt yêu cầu của bạn sớm nhất có thể ");
             int id = dex.sibling(dex.row(), 0).data().toInt();
             QSqlQuery* qry = new QSqlQuery(connect.mydb);
             qry->prepare("delete from tam where idsach = :id");

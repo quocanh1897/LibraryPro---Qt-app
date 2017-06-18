@@ -42,10 +42,5 @@ noiquy::~noiquy()
 void noiquy::on_pushButton_clicked()
 {
     this->close();
-    /*QString path = QCoreApplication::applicationDirPath()+"/noiquy.txt";
-    QFile file(path);
-    QTextStream in(&file);
-    ui->textBrowser->setPlainText(in.readAll());*/
-
 
 }

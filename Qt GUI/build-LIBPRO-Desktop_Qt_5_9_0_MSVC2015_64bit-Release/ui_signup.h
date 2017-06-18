@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCheckBox>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
@@ -26,18 +27,16 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QVBoxLayout>
-#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_SignUpDialog
 {
 public:
-    QWidget *widget;
     QVBoxLayout *verticalLayout_4;
     QGroupBox *groupBox;
     QVBoxLayout *verticalLayout_3;
-    QHBoxLayout *horizontalLayout_5;
+    QHBoxLayout *horizontalLayout_6;
     QVBoxLayout *verticalLayout_2;
     QLabel *label;
     QLabel *label_2;
@@ -54,7 +53,11 @@ public:
     QLineEdit *lineEdit_id;
     QLineEdit *lineEdit_pass;
     QLineEdit *lineEdit_confirm;
+    QHBoxLayout *horizontalLayout_5;
     QLineEdit *lineEdit_email;
+    QLabel *label_10;
+    QLineEdit *lineEdit_email2;
+    QComboBox *comboBox;
     QLineEdit *lineEdit_username;
     QHBoxLayout *horizontalLayout;
     QLabel *label_11;
@@ -74,32 +77,30 @@ public:
     QCheckBox *checkBox_admin;
     QPlainTextEdit *plainTextEdit_2;
     QCheckBox *read;
+    QCheckBox *xacthuc;
     QHBoxLayout *horizontalLayout_3;
     QSpacerItem *horizontalSpacer;
     QPushButton *pushButton_2;
     QPushButton *pushButton;
     QSpacerItem *horizontalSpacer_2;
+    QSpacerItem *verticalSpacer;
 
     void setupUi(QDialog *SignUpDialog)
     {
         if (SignUpDialog->objectName().isEmpty())
             SignUpDialog->setObjectName(QStringLiteral("SignUpDialog"));
-        SignUpDialog->resize(435, 558);
+        SignUpDialog->resize(381, 573);
         QIcon icon;
         icon.addFile(QStringLiteral(":/images/signupicon.png"), QSize(), QIcon::Normal, QIcon::Off);
         SignUpDialog->setWindowIcon(icon);
-        widget = new QWidget(SignUpDialog);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(2, 1, 421, 554));
-        verticalLayout_4 = new QVBoxLayout(widget);
+        verticalLayout_4 = new QVBoxLayout(SignUpDialog);
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
-        groupBox = new QGroupBox(widget);
+        groupBox = new QGroupBox(SignUpDialog);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         verticalLayout_3 = new QVBoxLayout(groupBox);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        horizontalLayout_5 = new QHBoxLayout();
-        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         label = new QLabel(groupBox);
@@ -153,7 +154,7 @@ public:
         verticalLayout_2->addWidget(label_9);
 
 
-        horizontalLayout_5->addLayout(verticalLayout_2);
+        horizontalLayout_6->addLayout(verticalLayout_2);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
@@ -180,10 +181,30 @@ public:
 
         verticalLayout->addWidget(lineEdit_confirm);
 
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
         lineEdit_email = new QLineEdit(groupBox);
         lineEdit_email->setObjectName(QStringLiteral("lineEdit_email"));
 
-        verticalLayout->addWidget(lineEdit_email);
+        horizontalLayout_5->addWidget(lineEdit_email);
+
+        label_10 = new QLabel(groupBox);
+        label_10->setObjectName(QStringLiteral("label_10"));
+
+        horizontalLayout_5->addWidget(label_10);
+
+        lineEdit_email2 = new QLineEdit(groupBox);
+        lineEdit_email2->setObjectName(QStringLiteral("lineEdit_email2"));
+
+        horizontalLayout_5->addWidget(lineEdit_email2);
+
+        comboBox = new QComboBox(groupBox);
+        comboBox->setObjectName(QStringLiteral("comboBox"));
+
+        horizontalLayout_5->addWidget(comboBox);
+
+
+        verticalLayout->addLayout(horizontalLayout_5);
 
         lineEdit_username = new QLineEdit(groupBox);
         lineEdit_username->setObjectName(QStringLiteral("lineEdit_username"));
@@ -259,6 +280,7 @@ public:
 
         radioButton_others = new QRadioButton(groupBox);
         radioButton_others->setObjectName(QStringLiteral("radioButton_others"));
+        radioButton_others->setChecked(true);
 
         horizontalLayout_4->addWidget(radioButton_others);
 
@@ -288,10 +310,10 @@ public:
         verticalLayout->addLayout(horizontalLayout_2);
 
 
-        horizontalLayout_5->addLayout(verticalLayout);
+        horizontalLayout_6->addLayout(verticalLayout);
 
 
-        verticalLayout_3->addLayout(horizontalLayout_5);
+        verticalLayout_3->addLayout(horizontalLayout_6);
 
         plainTextEdit_2 = new QPlainTextEdit(groupBox);
         plainTextEdit_2->setObjectName(QStringLiteral("plainTextEdit_2"));
@@ -303,6 +325,11 @@ public:
 
         verticalLayout_3->addWidget(read);
 
+        xacthuc = new QCheckBox(groupBox);
+        xacthuc->setObjectName(QStringLiteral("xacthuc"));
+
+        verticalLayout_3->addWidget(xacthuc);
+
 
         verticalLayout_4->addWidget(groupBox);
 
@@ -312,7 +339,7 @@ public:
 
         horizontalLayout_3->addItem(horizontalSpacer);
 
-        pushButton_2 = new QPushButton(widget);
+        pushButton_2 = new QPushButton(SignUpDialog);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
@@ -322,7 +349,7 @@ public:
 
         horizontalLayout_3->addWidget(pushButton_2);
 
-        pushButton = new QPushButton(widget);
+        pushButton = new QPushButton(SignUpDialog);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
         pushButton->setSizePolicy(sizePolicy);
@@ -336,7 +363,10 @@ public:
 
         verticalLayout_4->addLayout(horizontalLayout_3);
 
-        groupBox->raise();
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_4->addItem(verticalSpacer);
+
 
         retranslateUi(SignUpDialog);
 
@@ -357,6 +387,13 @@ public:
         label_7->setText(QApplication::translate("SignUpDialog", "Ngh\341\273\201 nghi\341\273\207p", Q_NULLPTR));
         label_14->setText(QApplication::translate("SignUpDialog", "Gi\341\273\233i t\303\255nh", Q_NULLPTR));
         label_9->setText(QApplication::translate("SignUpDialog", "Vai tr\303\262", Q_NULLPTR));
+        label_10->setText(QApplication::translate("SignUpDialog", "@", Q_NULLPTR));
+        comboBox->clear();
+        comboBox->insertItems(0, QStringList()
+         << QApplication::translate("SignUpDialog", ".com", Q_NULLPTR)
+         << QApplication::translate("SignUpDialog", ".vn", Q_NULLPTR)
+         << QApplication::translate("SignUpDialog", ".com.vn", Q_NULLPTR)
+        );
         label_11->setText(QApplication::translate("SignUpDialog", "DD", Q_NULLPTR));
         label_12->setText(QApplication::translate("SignUpDialog", "MM", Q_NULLPTR));
         label_13->setText(QApplication::translate("SignUpDialog", "YYYY", Q_NULLPTR));
@@ -367,6 +404,7 @@ public:
         checkBox_librarian->setText(QApplication::translate("SignUpDialog", "Th\341\273\247 th\306\260", Q_NULLPTR));
         checkBox_admin->setText(QApplication::translate("SignUpDialog", "Qu\341\272\243n l\303\255", Q_NULLPTR));
         read->setText(QApplication::translate("SignUpDialog", "T\303\264i \304\221\303\243 \304\221\341\273\215c v\303\240 \304\221\341\273\223ng \303\275 v\341\273\233i c\303\241c quy \304\221\341\273\213nh c\341\273\247a th\306\260 vi\341\273\207n.", Q_NULLPTR));
+        xacthuc->setText(QApplication::translate("SignUpDialog", "T\303\240i kho\341\272\243n \304\221\303\243 \304\221\306\260\341\273\243c th\306\260 vi\341\273\207n x\303\241c th\341\273\261c.", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("SignUpDialog", "OK", Q_NULLPTR));
         pushButton->setText(QApplication::translate("SignUpDialog", "Hu\341\273\267", Q_NULLPTR));
     } // retranslateUi
